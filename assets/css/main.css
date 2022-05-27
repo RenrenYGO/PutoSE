@@ -5,8 +5,8 @@
 :root {
     --light-color: #fff;
     --light-color-alt: #afb6cd;
-    --primary-background-color: gray;
-    --secondary-background-color: maroon;
+    --primary-background-color: rgb(150, 150, 150);
+    --secondary-background-color: rgb(145, 0, 0);
     --hover-light-color: var(--light-color);
     --hover-dark-color: var(--primary-background-color);
     --gradient-color: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
@@ -43,11 +43,17 @@ body {
     background-color: var(--primary-background-color);
     letter-spacing: 1px;
     transition: background-color .25s, color .25s;
+    
+}
+
+body > :not(header):not(footer) {
+    margin: 5em;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+    display: flex;
 }
 
 ul {
@@ -72,7 +78,7 @@ i {
 
 /* Theme color change */
 body.light-theme {
-    --light-color: #3d3d3d;
+    --light-color: #707070;
     --light-color-alt: rgba(0, 0, 0, .6);
     --primary-background-color: #fff;
     --secondary-background-color: #f1f1f1;
@@ -126,6 +132,7 @@ body.light-theme {
 .logo {
     font-size: var(--font-size-md);
     color: var(--light-color);
+    flex-direction: column;
 }
 
 .logo-image {
@@ -633,6 +640,7 @@ body.light-theme {
 /* Footer */
 .footer {
     background-color: var(--secondary-background-color);
+    margin:0
 }
 
 .footer-container {
