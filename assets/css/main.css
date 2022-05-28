@@ -3,10 +3,10 @@
 
 /* Custom properties */
 :root {
-    --light-color: #fff;
+    --light-color: #FFFFFF;
     --light-color-alt: #afb6cd;
-    --primary-background-color: gray;
-    --secondary-background-color: maroon;
+    --primary-background-color: #D9D9D9;
+    --secondary-background-color: #B32727;
     --hover-light-color: var(--light-color);
     --hover-dark-color: var(--primary-background-color);
     --gradient-color: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
@@ -43,11 +43,17 @@ body {
     background-color: var(--primary-background-color);
     letter-spacing: 1px;
     transition: background-color .25s, color .25s;
+    
+}
+
+body > :not(header):not(footer) {
+    margin: 5em;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+    display: flex;
 }
 
 ul {
@@ -72,10 +78,10 @@ i {
 
 /* Theme color change */
 body.light-theme {
-    --light-color: #3d3d3d;
+    --light-color: #707070;
     --light-color-alt: rgba(0, 0, 0, .6);
     --primary-background-color: #fff;
-    --secondary-background-color: #f1f1f1;
+    --secondary-background-color: grey;
     --hover-light-color: #fff;
     --transparent-dark-color: var(--secondary-background-color);
     --transparent-light-color: rgba(0, 0, 0, .1);
@@ -86,6 +92,7 @@ body.light-theme {
     max-width: 160rem;
     margin: 0 auto;
     padding: 0 1.5rem;
+    
 }
 
 .place-items-center {
@@ -121,11 +128,13 @@ body.light-theme {
     align-items: center;
     justify-content: space-between;
     padding-block: 0.5rem;
+    color: white;
 }
 
 .logo {
     font-size: var(--font-size-md);
     color: var(--light-color);
+    flex-direction: column;
 }
 
 .logo-image {
@@ -190,7 +199,7 @@ body.light-theme {
 .list-link:hover,
 .btn:hover,
 .btn:hover span {
-    color: var(--light-color);
+    color: var(--light-color-alt);
 }
 
 .moon-icon {
@@ -289,6 +298,47 @@ body.light-theme {
     width: 4rem;
     height: 4rem;
     display: flex;
+}
+/*for Forgot Password*/
+.box{
+    background-color: var(--secondary-background-color);
+    padding: 2rem 4rem;
+    border-radius: 15px;
+    box-shadow: 2px 5px;
+    text-align: center;
+    width: 50%;
+}
+
+.login{
+    max-width: 100px;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    -webkit-transform: translate3d(0, -70%, 0);
+    -moz-transform: translate3d(0, -70%, 0);
+    -o-transform: translate3d(0, -70%, 0);
+    -ms-transform: translate3d(0, -70%, 0);
+    transform: translate3d(0, -90%, 0);
+    color: white;
+}
+
+
+.btn-custom{
+    background-color: #FFEC82;
+    color: black;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.7em;
+}
+
+.form-control{
+    text-align: left;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.title{
+    color: #628EFF;
 }
 
 /* Form JavaScript styles */
@@ -437,12 +487,14 @@ body.light-theme {
 /* Sidebar */
 .sidebar {
     /* background-color: var(--secondary-background-color); */
-    background-color: rgb(243, 240, 240);
+    background-color: white;
     padding: 2.5rem;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px
+    border-bottom-left-radius: 15px;
+    box-shadow: 2px 5px;
+    margin-left: 2.5rem;
 }
 
 .trending-news-box {
@@ -455,7 +507,8 @@ body.light-theme {
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px
+    border-bottom-left-radius: 15px;
+    box-shadow: 2px 5px;
 }
 
 .trending-news-box:last-of-type {
@@ -633,6 +686,8 @@ body.light-theme {
 /* Footer */
 .footer {
     background-color: var(--secondary-background-color);
+    margin:0;
+    color: white;
 }
 
 .footer-container {
@@ -874,6 +929,7 @@ body.light-theme {
 
     .sign-up-btn {
         padding: 4px;
+        color: white;
     }
 
     /* Fancy button animation effect */
