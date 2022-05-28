@@ -92,6 +92,7 @@ body.light-theme {
     max-width: 160rem;
     margin: 0 auto;
     padding: 0 1.5rem;
+    
 }
 
 .place-items-center {
@@ -297,6 +298,47 @@ body.light-theme {
     width: 4rem;
     height: 4rem;
     display: flex;
+}
+/*for Forgot Password*/
+.box{
+    background-color: var(--secondary-background-color);
+    padding: 2rem 4rem;
+    border-radius: 15px;
+    box-shadow: 2px 5px;
+    text-align: center;
+    width: 50%;
+}
+
+.login{
+    max-width: 100px;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    -webkit-transform: translate3d(0, -70%, 0);
+    -moz-transform: translate3d(0, -70%, 0);
+    -o-transform: translate3d(0, -70%, 0);
+    -ms-transform: translate3d(0, -70%, 0);
+    transform: translate3d(0, -90%, 0);
+    color: white;
+}
+
+
+.btn-custom{
+    background-color: #FFEC82;
+    color: black;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.7em;
+}
+
+.form-control{
+    text-align: left;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.title{
+    color: #628EFF;
 }
 
 /* Form JavaScript styles */
