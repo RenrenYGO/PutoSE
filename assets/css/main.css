@@ -3,10 +3,10 @@
 
 /* Custom properties */
 :root {
-    --light-color: #fff;
+    --light-color: #FFFFFF;
     --light-color-alt: #afb6cd;
-    --primary-background-color: rgb(150, 150, 150);
-    --secondary-background-color: rgb(145, 0, 0);
+    --primary-background-color: #D9D9D9;
+    --secondary-background-color: #B32727;
     --hover-light-color: var(--light-color);
     --hover-dark-color: var(--primary-background-color);
     --gradient-color: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
@@ -81,7 +81,7 @@ body.light-theme {
     --light-color: #707070;
     --light-color-alt: rgba(0, 0, 0, .6);
     --primary-background-color: #fff;
-    --secondary-background-color: #f1f1f1;
+    --secondary-background-color: grey;
     --hover-light-color: #fff;
     --transparent-dark-color: var(--secondary-background-color);
     --transparent-light-color: rgba(0, 0, 0, .1);
@@ -127,6 +127,7 @@ body.light-theme {
     align-items: center;
     justify-content: space-between;
     padding-block: 0.5rem;
+    color: white;
 }
 
 .logo {
@@ -197,7 +198,7 @@ body.light-theme {
 .list-link:hover,
 .btn:hover,
 .btn:hover span {
-    color: var(--light-color);
+    color: var(--light-color-alt);
 }
 
 .moon-icon {
@@ -444,12 +445,14 @@ body.light-theme {
 /* Sidebar */
 .sidebar {
     /* background-color: var(--secondary-background-color); */
-    background-color: rgb(243, 240, 240);
+    background-color: white;
     padding: 2.5rem;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px
+    border-bottom-left-radius: 15px;
+    box-shadow: 2px 5px;
+    margin-left: 2.5rem;
 }
 
 .trending-news-box {
@@ -462,7 +465,8 @@ body.light-theme {
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px
+    border-bottom-left-radius: 15px;
+    box-shadow: 2px 5px;
 }
 
 .trending-news-box:last-of-type {
@@ -640,7 +644,8 @@ body.light-theme {
 /* Footer */
 .footer {
     background-color: var(--secondary-background-color);
-    margin:0
+    margin:0;
+    color: white;
 }
 
 .footer-container {
@@ -882,6 +887,7 @@ body.light-theme {
 
     .sign-up-btn {
         padding: 4px;
+        color: white;
     }
 
     /* Fancy button animation effect */
