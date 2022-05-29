@@ -373,6 +373,22 @@ body.light-theme {
     padding-left: 0.3rem;
 }
 
+/* For Login */
+
+.PutoLogo{
+    float: right;
+    position: relative;
+    top: -30px;
+    left: -65px;
+    height: 100px;
+    width: 100px;
+    color: white;
+}
+
+.title{
+    font-size: 250%;
+}
+
 /* Form JavaScript styles */
 .search-form-container.activated {
     opacity: 1;
