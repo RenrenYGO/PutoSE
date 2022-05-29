@@ -341,6 +341,38 @@ body.light-theme {
     color: #628EFF;
 }
 
+/* for Sign Up */
+.mb-3 hr{
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-top: 1px solid #000;
+    color: #000;
+    overflow: visible;
+    text-align: center;
+    height: 0.1rem;
+}
+.mb-3 hr:after{
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+    content: 'OR';
+    padding: 3px 3px;
+    position: relative;
+    top: -13px;
+}
+.social-icons{
+    display: flex;
+    justify-content: center;
+}
+.social-icons i{
+    font-size: 2rem;
+}
+.mb-3 p{
+    text-align: left;
+    padding-left: 0.3rem;
+}
+
 /* Form JavaScript styles */
 .search-form-container.activated {
     opacity: 1;
