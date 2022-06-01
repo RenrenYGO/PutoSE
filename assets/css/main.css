@@ -322,6 +322,42 @@ body.light-theme {
     color: white;
 }
 
+/*for Create Post*/
+.create{
+    background-color: white;
+    padding: 2rem 4rem;
+    border-radius: 15px;
+    box-shadow: 2px 5px var(--light-color-alt);
+    width: 70%;
+    color: #000;
+    display: grid;
+}
+
+#editor1{
+    height: 30rem;
+}
+
+label{
+    text-align: start;
+    font-size: 1.5rem;
+}
+
+.btn-post{
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    background-color: #FFEC82;
+    width: 10rem;
+    float: right;
+    border-radius: 15px;
+}
+
+.cancel{
+    background-color: var(--secondary-background-color);
+    color: var(--light-color);
+}
+
 
 .btn-custom{
     background-color: #FFEC82;
@@ -337,9 +373,7 @@ body.light-theme {
     padding: 1rem;
 }
 
-.title{
-    color: #628EFF;
-}
+
 
 /* for Sign Up */
 .mb-3 hr{
@@ -386,7 +420,10 @@ body.light-theme {
 }
 
 .title{
-    font-size: 250%;
+    font-size: 150%;
+    color: #628EFF;
+    text-align: center;
+    font-weight: bold;
 }
 
 /* Form JavaScript styles */
