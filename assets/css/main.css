@@ -462,7 +462,11 @@ label {
     height: var(--item-min-height-sm);
 }
 
-
+/* for Edit Profile */
+.pencil{
+    display: flex;
+    justify-content: right;
+}
 
 /* Form JavaScript styles */
 .search-form-container.activated {
