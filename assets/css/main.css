@@ -43,10 +43,10 @@ body {
     background-color: var(--primary-background-color);
     letter-spacing: 1px;
     transition: background-color .25s, color .25s;
-    
+
 }
 
-body > :not(header):not(footer) {
+body> :not(header):not(footer) {
     margin: 5em;
 }
 
@@ -92,7 +92,7 @@ body.light-theme {
     max-width: 160rem;
     margin: 0 auto;
     padding: 0 1.5rem;
-    
+
 }
 
 .place-items-center {
@@ -299,8 +299,9 @@ body.light-theme {
     height: 4rem;
     display: flex;
 }
+
 /*for Forgot Password*/
-.box{
+.box {
     background-color: var(--secondary-background-color);
     padding: 2rem 4rem;
     border-radius: 15px;
@@ -309,7 +310,7 @@ body.light-theme {
     width: 50%;
 }
 
-.login{
+.login {
     max-width: 100px;
     height: 100px;
     width: 100px;
@@ -323,7 +324,7 @@ body.light-theme {
 }
 
 /*for Create Post*/
-.create{
+.create {
     background-color: white;
     padding: 2rem 4rem;
     border-radius: 15px;
@@ -333,16 +334,16 @@ body.light-theme {
     display: grid;
 }
 
-#editor1{
+#editor1 {
     height: 30rem;
 }
 
-label{
+label {
     text-align: start;
     font-size: 1.5rem;
 }
 
-.btn-post{
+.btn-post {
     font-weight: bold;
     font-size: 1em;
     margin-top: 1rem;
@@ -353,21 +354,21 @@ label{
     border-radius: 15px;
 }
 
-.cancel{
+.cancel {
     background-color: var(--secondary-background-color);
     color: var(--light-color);
 }
 
 
-.btn-custom{
-    background-color: #FFEC82;
+.btn-custom {
+    background-color: #B32727;
     color: black;
     border-radius: 15px;
     font-weight: bold;
     font-size: 0.7em;
 }
 
-.form-control{
+.form-control {
     text-align: left;
     border-radius: 15px;
     padding: 1rem;
@@ -376,7 +377,7 @@ label{
 
 
 /* for Sign Up */
-.mb-3 hr{
+.mb-3 hr {
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     border: none;
@@ -386,7 +387,8 @@ label{
     text-align: center;
     height: 0.1rem;
 }
-.mb-3 hr:after{
+
+.mb-3 hr:after {
     background: #fff;
     border: 1px solid #000;
     border-radius: 4px;
@@ -395,21 +397,24 @@ label{
     position: relative;
     top: -13px;
 }
-.social-icons{
+
+.social-icons {
     display: flex;
     justify-content: center;
 }
-.social-icons i{
+
+.social-icons i {
     font-size: 2rem;
 }
-.mb-3 p{
+
+.mb-3 p {
     text-align: left;
     padding-left: 0.3rem;
 }
 
 /* For Login */
 
-.PutoLogo{
+.PutoLogo {
     float: right;
     position: relative;
     top: -30px;
@@ -419,7 +424,7 @@ label{
     color: white;
 }
 
-.title{
+.title {
     font-size: 150%;
     color: #628EFF;
     text-align: center;
@@ -596,6 +601,19 @@ label{
     box-shadow: 2px 5px;
 }
 
+.trending-news-profile-box {
+    margin-right: -33.33%;
+    gap: var(--gap);
+    padding-block: 2rem;
+    border-bottom: 1px solid var(--transparent-light-color);
+    background-color: white;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 2px 5px;
+}
+
 .trending-news-box:last-of-type {
     border-bottom: none;
 }
@@ -610,6 +628,18 @@ label{
     position: relative;
     width: 100%;
     height: var(--item-min-height-sm);
+}
+
+.trending-profile-img-box {
+    max-width: 100px;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    -webkit-transform: translate3d(0, -70%, 0);
+    -moz-transform: translate3d(0, -70%, 0);
+    -o-transform: translate3d(0, -70%, 0);
+    -ms-transform: translate3d(0, -70%, 0);
+    transform: translate3d(0, 50%, 0);
 }
 
 .trending-number {
@@ -771,7 +801,7 @@ label{
 /* Footer */
 .footer {
     background-color: var(--secondary-background-color);
-    margin:0;
+    margin: 0;
     color: white;
 }
 
@@ -1061,6 +1091,7 @@ label{
         height: 40rem;
     }
 }
+
 
 @media screen and (min-width: 1200px) {
     .older-posts-grid-wrapper {
