@@ -361,7 +361,7 @@ label {
 
 
 .btn-custom {
-    background-color: #B32727;
+    background-color: yellow;
     color: black;
     border-radius: 15px;
     font-weight: bold;
@@ -450,20 +450,20 @@ label {
     margin-right: 350px;
     margin-left: 400px;
     color: #0e1111;
-  }
+}
 
-  .castoria-img-box {
+.castoria-img-box {
     position: relative;
-    font-size:25px;
-    font-weight:bold;
+    font-size: 25px;
+    font-weight: bold;
     flex-wrap: wrap;
-    float:left;
+    float: left;
     width: 100%;
     height: var(--item-min-height-sm);
 }
 
 /* for Edit Profile */
-.pencil{
+.pencil {
     display: flex;
     justify-content: right;
 }

@@ -20,35 +20,43 @@
 </head>
 <body>  
     <div class="form bg ">
-        <div class="box ">
+        
+        <form method="post" class="box col-8 mt-5" action="<?php echo base_url('registration/register'); ?>">
+
             <div class="login">
                 <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png')?>" width="138" height="130" >
                 Sign Up
             </div>
-
-            <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Enter Username" name="name">
-            </div>
             
-            <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Enter Email" name="email">
-            </div>
+                <div class="p-3">
 
-            <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Enter Password" name="password">
-            </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="name" placeholder="Enter Name" required>
+                    </div>
 
-            <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password">
-            </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="email" placeholder="Enter Email" required>
+                    </div>
 
-            <div class="mb-3">
-                <button type="submit" class="btn btn-custom" name="submit" >Submit</button>
-            </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+                    </div>
 
-            <div class="mb-3">
-                <hr></hr>
-            </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="password2" placeholder="Confirm Password" required>
+                    </div>
+
+                    <?php echo validation_errors(); ?>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-custom" name="submit" >Submit</button>
+                    </div>
+
+                    <div class="mb-3">
+                        <hr></hr>
+                    </div>
+
+                </div>
+
 
             <div class="social-icons mb-3">
                 <a href="#" class="google"><i class="bi bi-google mx-5"></i></a>
@@ -56,8 +64,10 @@
             </div>
 
             <div class="row justify-content-left mt-3">
-               <p>Already have an account?<a href="<?php echo site_url("")?>"><u>LOGIN</u></a></p>
+               <p>Already have an account?<a href="<?php echo base_url('login'); ?>"><u>LOGIN</u></a></p>
             </div>
+
+        </form>
         </div>
     </div>
 

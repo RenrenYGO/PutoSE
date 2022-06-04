@@ -41,12 +41,6 @@
                     <li class="list-item">
                         <a href="#" class="list-link">Contact</a>
                     </li>
-                    <li class="list-item screen-lg-hidden">
-                        <a href="./signin.html" class="list-link">Sign in</a>
-                    </li>
-                    <li class="list-item screen-lg-hidden">
-                        <a href="./signup.html" class="list-link">Sign up</a>
-                    </li>
                 </ul>
             </div>
 
@@ -66,7 +60,7 @@
                 </button>
 
                 <a href="#" class="list-link screen-sm-hidden">Sign in</a>
-                <a href="#" class="btn sign-up-btn fancy-border screen-sm-hidden">
+                <a href="<?php echo base_url('register'); ?>" class="btn sign-up-btn fancy-border screen-sm-hidden">
                     <span>Sign up</span>
                 </a>
 
