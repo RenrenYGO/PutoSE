@@ -28,7 +28,7 @@
                             <p>Mona doesn't like me.</p>
                             <p>Mona doesn't like me.</p>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-custom" name="edit" >EDIT</button>
+                                <button type="submit" class="btn btn-custom cancel" name="edit" >EDIT</button>
                             </div>
                         </div>
                     </div>
