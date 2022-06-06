@@ -7,6 +7,16 @@
                     ->update("user", $data);  
         }
 
+        // UPDATE USER PROFILE
+        public function update_profile($data){  
+            $data2 = array(
+                'bio' => $data['bio'],
+                'name' => $data['name']
+            );
+
+            $this->db->where('id', $this->session->userdata('user')['id']);
+            return $this->db->update('user', $data2);
+        }
 
         // CHECK CODE IN DATABASE
         public function checkotp($code){

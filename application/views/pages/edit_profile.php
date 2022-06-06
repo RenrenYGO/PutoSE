@@ -1,38 +1,20 @@
- 
-<div class="form bg ">
-        <div class="box ">
-            <div class="Title">
-                Edit Profile
+<div class="container mt-5 pt-5">
+    <?php echo validation_errors();?>
+    <?php echo form_open_multipart('edit_profile/profile_edit');?>
+    <input type="hidden" name="id" value="<?php echo $this->session->userdata('user')['id'];?>">
+    <div class="box mt-5 col-6 mx-auto border border-2">
+        <h2 class="text-center mt-2 pt-3">Edit Profile</h2>
+        <div class="px-5 mx-3 pt-4 mt-3">
+            <div class="form-group mb-2">
+                <input type="text" class="form-control" name="name" placeholder="Edit Username" value="<?php echo $this->session->userdata('user')['name'];?>">
             </div>
-
-            <div class="mb-3">
-                <p class="Title">Name:</p>
-                <a href="#" class="pencil"><i class="bi bi-pencil"></i></a>
-                <input type="text" class="form-control" name="name">
+            <div class="form-group mb-2">
+                <textarea class="form-control" name="bio" placeholder="Edit Bio"
+                ><?php echo $this->session->userdata('user')['bio'];?></textarea>
             </div>
-            
-            <div class="mb-3">
-                <p class="Title">Email:</p>
-                <a href="#" class="pencil"><i class="bi bi-pencil"></i></a>
-                <input type="text" class="form-control" name="email">
+            <div class="ms-auto">
+                <button type="submit" class="btn btn-default mt-2">Submit</button>
             </div>
-
-            <div class="mb-3">
-                <p class="Title">Password:</p>
-                <a href="#" class="pencil"><i class="bi bi-pencil"></i></a>
-                <input type="password" class="form-control" name="password">
-            </div>
-
-            <div class="mb-3">
-                <p class="Title">New Password:</p>
-                <input type="password" class="form-control" name="confirm_password">
-            </div>
-
-            <div class="mb-3">
-                <button type="submit" class="btn btn-custom" name="submit" >Submit</button>
-            </div>
-
         </div>
     </div>
-
-    
+</div>
