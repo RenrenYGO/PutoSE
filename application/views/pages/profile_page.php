@@ -14,7 +14,7 @@
     </div>
     </a>
     <div class="text-dark text-center">
-        <h3>MARK ALJON REALES.</h3>
+        <h3><?php echo $user['name'];?></h3>
     </div>
 
     <div class="page-header"></div>
