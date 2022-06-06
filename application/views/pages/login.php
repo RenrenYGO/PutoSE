@@ -6,7 +6,7 @@
             </div>
             
             <div class="title" style="color: #FFFFFF">
-                <b>Welcome back, Ka-Puto! Sign In!</b>   
+                <b>Welcome back to the blog, Ka-Puto!</b>   
             </div>
 
             <div class="mb-3">
