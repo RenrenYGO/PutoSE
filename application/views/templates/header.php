@@ -61,10 +61,21 @@
                     <i class="ri-close-line close-menu-icon"></i>
                 </button>
 
-                <a href="#" class="list-link screen-sm-hidden">Sign in</a>
-                <a href="<?php echo base_url('register'); ?>" class="btn sign-up-btn fancy-border screen-sm-hidden">
-                    <span>Sign up</span>
-                </a>
+                <?php $user = $this->session->userdata('user');
+                if(isset($user) && $user!=null):?>
+
+                    <a href="<?php echo base_url('profile');?>" class="list-link screen-sm-hidden">Profile</a>
+                    <a href="<?php echo base_url('logout');?>" class="list-link screen-sm-hidden">Sign Out</a>
+                    
+                <?php else:?>
+                    <a href="<?php echo base_url('login'); ?>" class="list-link screen-sm-hidden">Sign in</a>
+                    <a href="<?php echo base_url('register'); ?>" class="btn sign-up-btn fancy-border screen-sm-hidden">
+                        <span>Sign up</span>
+                    </a>
+
+                <?php endif; ?>
+
+                    
 
                 <a href="#menu">
                     &#9776;

@@ -6,7 +6,7 @@
             </div>
             
             <div class="title" style="color: #FFFFFF">
-                <b>Welcome back, Ka-Puto!</b>   
+                <b>Welcome back, Ka-Puto! Sign In!</b>   
             </div>
 
             <div class="mb-3">
@@ -21,6 +21,8 @@
                 <?php echo validation_errors();?>
             </div>
 
+            <?php echo validation_errors(); ?>
+            
             <div class="mb-3">
                 <button type="submit" class="btn btn-custom" name="Submit" >Login</button>
             </div>
@@ -30,6 +32,7 @@
                <p>Can't Log in?<a href="<?php echo base_url("forgot_pass")?>"><u>Forgot Password</u></a></p>
             </div>
         </div>
+    </form>
     </div>
 
     
