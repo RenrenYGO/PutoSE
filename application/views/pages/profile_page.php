@@ -24,11 +24,9 @@
                     <div class="col-4 py-5 ">
                         <div class="h-100 bg-light text-dark border box ">
                             <h3>About Me</h3>
-                            <p>Mona doesn't like me.</p>
-                            <p>Mona doesn't like me.</p>
-                            <p>Mona doesn't like me.</p>
+                            <p><?php echo $user['bio'];?></p>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-custom cancel" name="edit" >EDIT</button>
+                                <a type="submit" id="edit" href="<?php echo base_url('pages/dashboard/edit_profile');?>" class="btn btn-custom" name="edit" >EDIT PROFILE</a>
                             </div>
                         </div>
                     </div>
