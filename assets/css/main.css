@@ -47,7 +47,7 @@ body {
 }
 
 body> :not(header):not(footer) {
-    margin: 5em;
+    padding: 5em;
 }
 
 a {
@@ -486,6 +486,7 @@ label {
 .featured-articles-container,
 .featured-content {
     gap: var(--gap);
+    margin-right: 3em;
 }
 
 .headline-banner {
@@ -514,6 +515,8 @@ label {
 .fancy-border {
     position: relative;
     overflow: hidden;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .fancy-border::before {

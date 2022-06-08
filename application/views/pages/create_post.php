@@ -4,7 +4,7 @@
             Create Post
         </div>
         <?php echo validation_errors();?>
-        <?php echo form_open_multipart("posts/create") ;?>
+            <?php echo form_open_multipart("posts/create") ;?>
             <div class="form-group">
                 <label for="title">Title : </label>
                 <input type="text" class="form-control" name="title">
@@ -14,7 +14,7 @@
                 <textarea  class="form-control" id="editor1" name="body"></textarea>
             </div>
             <button type="submit" class="btn btn-post">Post</button>
-            <button type="submit" class="btn btn-post cancel">Cancel</button>
+            <a href = "<?php echo base_url('/dashboard');?>"  class="btn btn-post cancel">Cancel</a>
         </form>
     </div>
 </div>
