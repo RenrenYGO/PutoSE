@@ -8,10 +8,11 @@
         }
 
         // UPDATE USER PROFILE
-        public function update_profile($data){  
+        public function update_profile($data, $profile_picture){  
             $data2 = array(
                 'bio' => $data['bio'],
-                'name' => $data['name']
+                'name' => $data['name'],
+                'profile_picture' => $profile_picture
             );
 
             $this->db->where('id', $this->session->userdata('user')['id']);
