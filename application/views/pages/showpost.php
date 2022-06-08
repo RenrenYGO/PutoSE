@@ -2,11 +2,11 @@
 <div class="castoria-box">
     <div class="castoria-img-box">
         <img src="<?php echo base_url('/assets/images/featured/Debug01.png')?>" width="90" height="105" >
-        <span>Castoria</span>
+        <span><?php echo $post['name'];?></span>
     <div>
-        <span>Banner Announcement</span>   
+        <span><?php echo $post['title'];?></span>   
     </div>
-        <span>I'll be present in the upcoming banner, so make sure to save up. See you next month!</span>
+        <span><?php echo $post['content'];?></span>
     </div>
 </div>
 

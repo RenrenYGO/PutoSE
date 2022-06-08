@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route["post/(:any)"] = "posts/view/$1";
 $route["login"]= "pages/dashboard/login";
 $route["forgot_pass"]= "forgot_password/verify";
 $route["pages/dashboard/(:any)"]="pages/dashboard/$1";
