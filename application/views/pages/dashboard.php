@@ -33,43 +33,26 @@
                     <span>Create Post + </span>
                 </a>
 
-                <a href="#" class="trending-news-box">
-                    <div class="trending-news-img-box">
-                        <span class="trending-number place-items-center">01</span>
-                        <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
-                    </div>
-
-                    <div class="trending-news-data">
-
-                        <div class="article-data">
-                            <span>1 April 2022</span>
-                            <span class="article-data-spacer"></span>
-                            <span>By Aljon</span>
+                <?php foreach ($posts as $post):?>
+                    <a href="#" class="trending-news-box">
+                        <div class="trending-news-img-box">
+                            <span class="trending-number place-items-center">01</span>
+                            <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
                         </div>
 
-                        <h3 class="title article-title">SI MARK</h3>
+                        <div class="trending-news-data">
 
-                    </div>
-                </a>
+                            <div class="article-data">
+                                <span><?php echo $post['created_at'];?></span>
+                                <span class="article-data-spacer"></span>
+                                <span><?php echo $post['name'];?></span>
+                            </div>
 
-                <a href="#" class="trending-news-box">
-                    <div class="trending-news-img-box">
-                        <span class="trending-number place-items-center">02</span>
-                        <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
-                    </div>
+                            <h3 class="title article-title"><?php echo $post['title'];?></h3>
 
-                    <div class="trending-news-data">
-
-                        <div class="article-data">
-                            <span>1 April 2022</span>
-                            <span class="article-data-spacer"></span>
-                            <span>By Mark</span>
                         </div>
-
-                        <h3 class="title article-title">TAHIMIK LANG</h3>
-
-                    </div>
-                </a>
+                    </a>
+                <?php endforeach;?>
 
             </div>
 
