@@ -10,7 +10,11 @@
 
     <a href="#" class="mb-5 trending-news-box">
     <div class="trending-profile-img-box">
-    <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
+        <?php if($user['profile_picture']!='noimage.jpg'):?>
+        <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "80" height="80" class="rounded rounded-circle">
+        <?php else:?>
+        <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "80" height="80" class="rounded rounded-circle">
+        <?php endif;?>
     </div>
     </a>
     <div class="text-dark text-center">

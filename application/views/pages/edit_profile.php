@@ -12,6 +12,9 @@
                 <textarea class="form-control" name="bio" placeholder="Edit Bio"
                 ><?php echo $this->session->userdata('user')['bio'];?></textarea>
             </div>
+            <div class="label" title="Add Profile Picture">
+                <input type="file" name="profile_picture" size="200">
+            </div>
             <div class="ms-auto">
                 <button type="submit" class="btn btn-default mt-2">Submit</button>
             </div>
