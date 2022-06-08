@@ -28,10 +28,32 @@
         <div class="featured-articles-container container d-grid">
 
             <div class="featured-content d-grid">
-
-                <a href="#" class="btn sign-up-btn fancy-border screen-sm-hidden">
+                
+                <?php if(isset($_SESSION['user']['name'])):?>
+                    <a href="<?php echo base_url('posts/create');?>" class="btn sign-up-btn fancy-border screen-sm-hidden" >
                     <span>Create Post + </span>
-                </a>
+                    </a>
+                <?php else:?>
+                    <button data-bs-toggle="modal" data-bs-target="#InputModal" class="btn sign-up-btn fancy-border screen-sm-hidden" >
+                    <span>Create Post + </span>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="InputModal" tabindex="-1" aria-labelledby="InputModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered text-color">
+                            <div class="modal-content">
+                                <div class="modal-header justify-content-center">
+                                <h5 class="modal-title" id="InputModalTitleLabel">Create Post</h5>
+                                </div> 
+                                <div class="modal-body">
+                                <h2 class="title footer-title">Please sign in first or create an account</h2>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif;?>
 
                 <?php foreach ($posts as $post):?>
                     <a href="<?php echo base_url('post/'.$post['id']);?>" class="trending-news-box">
