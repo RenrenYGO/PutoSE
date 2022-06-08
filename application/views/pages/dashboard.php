@@ -45,7 +45,7 @@
                                 <h5 class="modal-title" id="InputModalTitleLabel">Create Post</h5>
                                 </div> 
                                 <div class="modal-body">
-                                <h2 class="title footer-title">Please sign in first or create an account</h2>
+                                <h2 class="title footer-title">Please sign in first or create an account!</h2>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -95,8 +95,7 @@
 
             <div class="form-container-inner">
                 <h3 class="title newsletter-title">Subscribe to PUTO</h3>
-                <p class="newsletter-description">Lorem ipsum dolor sit amet consectetur adipisicing quaerat
-                    dignissimos.</p>
+                <p class="newsletter-description">Join our newsletter for the latest blog updates.</p>
 
                 <form action="" class="form">
                     <input class="form-input" type="text" placeholder="Enter your email address">

@@ -5,10 +5,9 @@
 
             <div class="company-data">
                 <a href="./index.html">
-                    <h2 class="logo">PUTO</h2>
+                    <h2 class="logo"><b>PUTO</b></h2>
                 </a>
-                <p class="company-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, iure.
-                    Harum, animi dolores, nam, ad magni expedita.</p>
+                <p class="company-description">PUTO is a dedicated Micro-blog made by students, for students. Enjoy your stay!</p>
 
                 <ul class="list social-media">
                     <li class="list-item">

@@ -29,9 +29,9 @@
         <nav class="navbar container">
            
             <a href="<?php echo base_url('dashboard')?>">              
-                <h2 class="logo">PUTO</h2>
+                <h2 class="logo"><b>PUTO</b></h2>
                 <div class="logo-image">
-                    <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png')?>" >
+                    <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png') ?>" width="40" height="50" >
                 </div>
             </a>
 
