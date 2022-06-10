@@ -4,7 +4,6 @@
         <div class="footer-container container d-grid">
 
             <div class="company-data">
-                <a href="./index.html">
                     <h2 class="logo"><b>PUTO</b></h2>
                 </a>
                 <p class="company-description">PUTO is a dedicated Micro-blog made by students, for students. Enjoy your stay!</p>
@@ -18,9 +17,6 @@
                     </li>
                     <li class="list-item">
                         <a href="#" class="list-link"><i class="ri-twitter-line"></i></a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link"><i class="ri-pinterest-line"></i></a>
                     </li>
                 </ul>
 

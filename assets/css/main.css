@@ -93,6 +93,7 @@ body.light-theme {
 }
 
 .place-items-center {
+    font-size:10px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -459,6 +460,7 @@ label {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
+    font-size: 26px;
     margin: 2em auto;
     margin-top: 5em;
     color: #0e1111;
@@ -466,7 +468,7 @@ label {
 
 .castoria-img-box {
     position: relative;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     flex-wrap: wrap;
     float: left;
@@ -1044,6 +1046,7 @@ label {
     .featured-content {
         /* grid-template-columns: repeat(4, 1fr); */
         grid-template-rows: 5rem repeat(4, 1fr);
+        font-size: 23px;
     }
 
     .headline-banner {
