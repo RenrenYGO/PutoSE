@@ -58,7 +58,7 @@
                 <?php foreach ($posts as $post):?>
                     <a href="<?php echo base_url('post/'.$post['id']);?>" class="trending-news-box">
                         <div class="trending-news-img-box">
-                            <span class="trending-number place-items-center">01</span>
+                            <span class="trending-number place-items-center">HOT</span>
                             <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
                         </div>
 

@@ -67,7 +67,7 @@
                 <?php $user = $this->session->userdata('user');
                 if(isset($user) && $user!=null):?>
 
-                    <a href="<?php echo base_url('profile');?>" class="list-link screen-sm-hidden">Profile</a>
+                    <a href="<?php echo base_url('profile');?>" class="list-link screen-sm-hidden"><?php echo $this->session->userdata('user')['name'];?></a>
                     <a href="<?php echo base_url('logout');?>" class="list-link screen-sm-hidden">Sign Out</a>
                     
                 <?php else:?>
