@@ -25,7 +25,7 @@
             
 
             <div class="row justify-content-left mt-3">
-               <p>Can't Log in?<a href="<?php echo site_url("")?>"><u>Forgot Password</u></a></p>
+               <p>Can't Log in?<a href="<?php echo site_url("forgot_pass")?>"><u>Forgot Password</u></a></p>
             </div>
         </div>
     </form>

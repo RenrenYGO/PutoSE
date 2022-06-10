@@ -10,7 +10,7 @@
     </div>
 </div>
 
-    <div class="mb-6">
+    <div class="comment">
         <input type="comment" class="form-control" placeholder="Comment your thoughts..." name="comment">
         <button type="submit" class="btn btn-post">Comment</button>
     </div>

@@ -1,5 +1,5 @@
 <div class="form bg">
-    <div class="box col-8 mt-5">
+    <div class="box">
         <div class="login">
             <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png')?>" width="138" height="130" >
             Forgot Password

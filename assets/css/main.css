@@ -43,12 +43,9 @@ body {
     background-color: var(--primary-background-color);
     letter-spacing: 1px;
     transition: background-color .25s, color .25s;
-
+    
 }
 
-body> :not(header):not(footer) {
-    padding: 5em;
-}
 
 a {
     color: inherit;
@@ -300,6 +297,16 @@ body.light-theme {
     display: flex;
 }
 
+.about {
+    background-color: var(--secondary-background-color);
+    padding: 2rem 4rem;
+    border-radius: 15px;
+    box-shadow: 2px 5px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
 /*for Forgot Password*/
 .box {
     background-color: var(--secondary-background-color);
@@ -308,6 +315,11 @@ body.light-theme {
     box-shadow: 2px 5px;
     text-align: center;
     width: 50%;
+    margin: 10em auto;
+}
+
+.signup{
+    margin: 10rem auto;
 }
 
 .login {
@@ -332,6 +344,7 @@ body.light-theme {
     width: 70%;
     color: #000;
     display: grid;
+    margin: 10rem auto;
 }
 
 #editor1 {
@@ -418,7 +431,7 @@ label {
     float: right;
     position: relative;
     top: -30px;
-    left: 15px;
+    left: -65px;
     height: 100px;
     width: 100px;
     color: white;
@@ -446,9 +459,8 @@ label {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
-    margin-top: 100px;
-    margin-right: 350px;
-    margin-left: 400px;
+    margin: 2em auto;
+    margin-top: 5em;
     color: #0e1111;
 }
 
@@ -460,6 +472,11 @@ label {
     float: left;
     width: 100%;
     height: var(--item-min-height-sm);
+}
+
+.comment{
+    padding: 5rem;
+    margin: 0 15em;
 }
 
 /* for Edit Profile */
@@ -486,7 +503,7 @@ label {
 .featured-articles-container,
 .featured-content {
     gap: var(--gap);
-    margin-right: 3em;
+    padding: 0 5rem;
 }
 
 .headline-banner {
@@ -624,14 +641,14 @@ label {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
-    margin-left: 2.5rem;
+    margin: 0 2rem;
 }
 
 .trending-news-box {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-    padding-block: 2rem;
+    padding: 2rem;
     border-bottom: 1px solid var(--transparent-light-color);
     background-color: white;
     border-top-right-radius: 15px;
@@ -639,10 +656,12 @@ label {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
+    
 }
 
 .trending-news-profile-box {
-    margin-right: -33.33%;
+    margin-right: -30%;
+    margin-left: 5rem;
     gap: var(--gap);
     padding-block: 2rem;
     border-bottom: 1px solid var(--transparent-light-color);
@@ -652,6 +671,7 @@ label {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
+   
 }
 
 .trending-news-box:last-of-type {
@@ -674,7 +694,7 @@ label {
     max-width: 100px;
     height: 100px;
     width: 100px;
-    margin: 0 auto;
+    margin: auto;
     -webkit-transform: translate3d(0, -70%, 0);
     -moz-transform: translate3d(0, -70%, 0);
     -o-transform: translate3d(0, -70%, 0);
