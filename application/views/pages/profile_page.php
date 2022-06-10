@@ -1,14 +1,5 @@
-<head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-    <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
-    <!-- <link rel="stylesheet" href="prof.css"> -->
-</head>
 
-<body class="profile-page">
-
-    <a href="#" class="mb-5 trending-news-box">
+    <a href="#" class="m-5 trending-news-box">
     <div class="trending-profile-img-box">
         <?php if($user['profile_picture']!='noimage.jpg'):?>
         <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "80" height="80" class="rounded rounded-circle">
@@ -26,7 +17,7 @@
 
                 <div class="row">
                     <div class="col-4 py-5 ">
-                        <div class="h-100 bg-light text-dark border box ">
+                        <div class="h-100 bg-light text-dark border about ">
                             <h3>About Me</h3>
                             <p><?php echo $user['bio'];?></p>
                             <div class="mb-3">
@@ -79,11 +70,3 @@
 
                 </div>
     </div>
-
-
-
-
-
-
-
-</body> 
