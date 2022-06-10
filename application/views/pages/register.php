@@ -1,7 +1,7 @@
 
     <div class="form bg ">
         
-        <form method="post" class="box col-8 mt-5" action="<?php echo base_url('registration/register'); ?>">
+        <form method="post" class="box signup" action="<?php echo base_url('registration/register'); ?>">
 
             <div class="login">
                 <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png')?>" width="138" height="130" >
