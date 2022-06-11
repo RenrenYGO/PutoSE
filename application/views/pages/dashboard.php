@@ -30,9 +30,11 @@
             <div class="featured-content d-grid">
                 
                 <?php if(isset($_SESSION['user']['name'])):?>
-                    <a href="<?php echo base_url('posts/create');?>" class="btn sign-up-btn fancy-border screen-sm-hidden" >
-                    <span>Create Post + </span>
-                    </a>
+                    <button class="btn sign-up-btn fancy-border screen-sm-hidden " >
+                        <a class="justify-content-center"href="<?php echo base_url('posts/create');?>" >
+                            <span>Create Post + </span>
+                        </a>
+                    </button>
                 <?php else:?>
                     <button data-bs-toggle="modal" data-bs-target="#InputModal" class="btn sign-up-btn fancy-border screen-sm-hidden" >
                     <span>Create Post + </span>
