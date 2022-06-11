@@ -28,43 +28,26 @@
 
                     <div class="col-6 py-7 mt-5">
             
-                        <a href="#" class="mb-5 trending-news-profile-box">
+                    <?php foreach ($posts as $post):?>
+                    <a href="<?php echo base_url('post/'.$post['id']);?>" class="trending-news-box">
                         <div class="trending-news-img-box">
-                        <span class="trending-number place-items-center">01</span>
-                        <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
+                            <span class="trending-number place-items-center">HOT</span>
+                            <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
                         </div>
 
                         <div class="trending-news-data">
 
-                        <div class="article-data">
-                        <span>1 April 2022</span>
-                        <span class="article-data-spacer"></span>
-                        <span>By Aljon</span>
-                        </div>
+                            <div class="article-data">
+                                <span><?php echo $post['created_at'];?></span>
+                                <span class="article-data-spacer"></span>
+                                <span><?php echo $post['name'];?></span>
+                            </div>
 
-                        <h3 class="title article-title">SI MARK</h3>
-
-                        </div>
-                        </a>
-
-                        <a href="#" class="mb-5 trending-news-profile-box">
-                        <div class="trending-news-img-box">
-                        <span class="trending-number place-items-center">02</span>
-                        <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
-                        </div>
-
-                        <div class="trending-news-data">
-
-                        <div class="article-data">
-                        <span>1 April 2022</span>
-                        <span class="article-data-spacer"></span>
-                        <span>By Mark</span>
-                        </div>
-
-                        <h3 class="title article-title">TAHIMIK LANG</h3>
+                            <h3 class="title article-title"><?php echo $post['title'];?></h3>
 
                         </div>
-                        </a>
+                    </a>
+                <?php endforeach;?>
 
                     </div>
 

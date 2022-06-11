@@ -11,7 +11,17 @@ class Profile extends CI_Controller{
     }
 
     public function index(){
-        $data['user'] = $this->profile_model->get_profile();
+        $data['user'] = $this->profile_model->get_profile(FALSE);
+        $data['posts'] = $this->posts_model->get_posts_by_user(FALSE);
+
+        $this->load->view('templates/header');
+        $this->load->view('pages/profile_page',$data);
+        $this->load->view('templates/footer');
+    }
+
+    public function viewprofile($id){
+        $data['user'] = $this->profile_model->get_profile($id);
+        $data['posts'] = $this->posts_model->get_posts_by_user($id);
 
         $this->load->view('templates/header');
         $this->load->view('pages/profile_page',$data);
