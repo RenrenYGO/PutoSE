@@ -309,6 +309,7 @@ html {
     border-radius: 15px;
     box-shadow: 2px 5px;
     text-align: center;
+    height: 20em;
     width: 80%;
     margin: auto;
 }
