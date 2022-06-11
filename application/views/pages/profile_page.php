@@ -21,7 +21,10 @@
                             <h3>About Me</h3>
                             <p><?php echo $user['bio'];?></p>
                             <div class="mb-3">
-                                <a type="submit" id="edit" href="<?php echo base_url('pages/dashboard/edit_profile');?>" class="btn btn-custom" name="edit" >EDIT PROFILE</a>
+                                <?php $user = $this->session->userdata('user');
+                                    if(isset($user) && $user!=null):?>
+                                        <a type="submit" id="edit" href="<?php echo base_url('pages/dashboard/edit_profile');?>" class="btn btn-custom" name="edit" >EDIT PROFILE</a>
+                                    <?php endif;?>
                             </div>
                         </div>
                     </div>
