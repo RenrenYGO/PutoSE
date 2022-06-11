@@ -43,7 +43,7 @@ body {
     background-color: var(--primary-background-color);
     letter-spacing: 1px;
     transition: background-color .25s, color .25s;
-    
+    overflow-x:hidden;
 }
 
 
@@ -111,6 +111,11 @@ body.light-theme {
     display: none;
 }
 
+/* Fix modal hiding the scrollbar */
+html {
+    overflow-y: scroll !important;
+}
+
 /* Header */
 .header {
     background-color: var(--secondary-background-color);
@@ -119,6 +124,7 @@ body.light-theme {
     left: 0;
     width: 100%;
     z-index: 999;
+    
 }
 
 .navbar {
@@ -304,6 +310,7 @@ body.light-theme {
     border-radius: 15px;
     box-shadow: 2px 5px;
     text-align: center;
+    height: 20em;
     width: 80%;
     margin: auto;
 }
@@ -319,7 +326,7 @@ body.light-theme {
     margin: 10em auto;
 }
 
-.signup{
+.signup {
     margin: 10rem auto;
 }
 
@@ -476,7 +483,7 @@ label {
     height: var(--item-min-height-sm);
 }
 
-.comment{
+.comment {
     padding: 5rem;
     margin: 0 15em;
 }
@@ -534,8 +541,8 @@ label {
 .fancy-border {
     position: relative;
     overflow: hidden;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .fancy-border::before {
@@ -658,7 +665,7 @@ label {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
-    
+
 }
 
 .trending-news-profile-box {
@@ -673,7 +680,7 @@ label {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
-   
+
 }
 
 .trending-news-box:last-of-type {

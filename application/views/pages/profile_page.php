@@ -15,58 +15,45 @@
     <div class="page-header"></div>
     <div class="main">
 
-                <div class="row">
-                    <div class="col-4 py-5 ">
-                        <div class="h-100 bg-light text-dark border about ">
-                            <h3>About Me</h3>
-                            <p><?php echo $user['bio'];?></p>
-                            <div class="mb-3">
+        <div class="row">
+            <div class="col-4 py-5 ">
+                <div class="bg-light text-dark border about ">
+                    <h3>About Me</h3>
+                    <p><?php echo $user['bio'];?></p>
+                    <div class="mb-3">
+                        <?php $user = $this->session->userdata('user');
+                            if(isset($user) && $user!=null):?>
                                 <a type="submit" id="edit" href="<?php echo base_url('pages/dashboard/edit_profile');?>" class="btn btn-custom" name="edit" >EDIT PROFILE</a>
-                            </div>
-                        </div>
+                            <?php endif;?>
                     </div>
-
-                    <div class="col-6 py-7 mt-5">
-            
-                        <a href="#" class="mb-5 trending-news-profile-box">
-                        <div class="trending-news-img-box">
-                        <span class="trending-number place-items-center">01</span>
-                        <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
-                        </div>
-
-                        <div class="trending-news-data">
-
-                        <div class="article-data">
-                        <span>1 April 2022</span>
-                        <span class="article-data-spacer"></span>
-                        <span>By Aljon</span>
-                        </div>
-
-                        <h3 class="title article-title">SI MARK</h3>
-
-                        </div>
-                        </a>
-
-                        <a href="#" class="mb-5 trending-news-profile-box">
-                        <div class="trending-news-img-box">
-                        <span class="trending-number place-items-center">02</span>
-                        <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
-                        </div>
-
-                        <div class="trending-news-data">
-
-                        <div class="article-data">
-                        <span>1 April 2022</span>
-                        <span class="article-data-spacer"></span>
-                        <span>By Mark</span>
-                        </div>
-
-                        <h3 class="title article-title">TAHIMIK LANG</h3>
-
-                        </div>
-                        </a>
-
-                    </div>
-
                 </div>
+            </div>
+               
+            <div class="container col-6 py-5">
+            
+                <?php foreach ($posts as $post):?>
+                    <div class="trending-news-box mb-5 ">
+                        <div class="trending-news-img-box">
+                            <span class="trending-number place-items-center">HOT</span>
+                            <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
+                        </div>
+
+                        <div class="trending-news-data">
+                            <div class="article-data">
+                                <span><?php echo $post['created_at'];?></span>
+                                <span class="article-data-spacer"></span>
+                                <span><?php echo $post['name'];?></span>
+                            </div>
+
+                            <h3 class="title article-title">
+                                <a href="<?php echo base_url('post/'.$post['id']);?>" >
+                                <?php echo $post['title'];?></a>
+                            </h3>
+                        </div>
+                    </div>
+                <?php endforeach;?>
+
+            </div>
+
+        </div>
     </div>
