@@ -56,10 +56,10 @@
                 <?php endif;?>
 
                 <?php foreach ($posts as $post):?>
-                    <a href="<?php echo base_url('post/'.$post['id']);?>" class="trending-news-box">
+                    <div class="trending-news-box">
                         <div class="trending-news-img-box">
                             <span class="trending-number place-items-center">HOT</span>
-                            <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
+                            <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"> <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image"></a>
                         </div>
 
                         <div class="trending-news-data">
@@ -67,13 +67,13 @@
                             <div class="article-data">
                                 <span><?php echo $post['created_at'];?></span>
                                 <span class="article-data-spacer"></span>
-                                <span><?php echo $post['name'];?></span>
+                                <span><a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"><?php echo $post['name'];?></a></span>
                             </div>
 
-                            <h3 class="title article-title"><?php echo $post['title'];?></h3>
+                            <a href="<?php echo base_url('post/'.$post['id']);?>"><h3 class="title article-title"><?php echo $post['title'];?></h3></a>
 
                         </div>
-                    </a>
+                    </div>
                 <?php endforeach;?>
 
             </div>

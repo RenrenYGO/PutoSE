@@ -4,7 +4,7 @@
         <div class="footer-container container d-grid">
 
             <div class="company-data">
-                <a href="./index.html">
+            <a href="<?php echo base_url('dashboard')?>">
                     <h2 class="logo"><b>PUTO</b></h2>
                 </a>
                 <p class="company-description">PUTO is a dedicated Micro-blog made by students, for students. Enjoy your stay!</p>
