@@ -36,7 +36,7 @@
         <nav class="navbar container">
            
             <a href="<?php echo base_url('dashboard')?>">              
-                <h2 class="logo"><b>PUTO</b></h2>
+                <h2 class="logo mt-2"><b>PUTO</b></h2>
                 <div class="logo-image">
                     <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png') ?>" width="40" height="50" >
                 </div>
@@ -74,9 +74,28 @@
                 <?php $user = $this->session->userdata('user');
                 if(isset($user) && $user!=null):?>
 
-                    <a href="<?php echo base_url('profile');?>" class="list-link screen-sm-hidden"><?php echo $this->session->userdata('user')['name'];?></a>
-                    <a href="<?php echo base_url('logout');?>" class="list-link screen-sm-hidden">Sign Out</a>
                     
+                    
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a href="#menu"> &#9776;</a>
+                    <i class="bi bi-list h3"></i>
+                    </button>
+                    
+                    <!-- Dropdowm Menu -->
+                    <ul class="dropdown-menu dropdown-menu-end  mx-3 my-2">
+                        <li><a class="dropdown-item px-3" href="<?php echo base_url('profile');?>" >
+                            <div class="logo-image mt-2">
+                                <img src="<?php echo base_url("/assets/images/featured/PROFILEPICPLACEHOLDER.png") ?>" width="40" height="40"  style="float:left;">
+                                <h3 class = "m-3" > <?php echo $this->session->userdata('user')['name'];?> </h3>
+                            </div>
+                            
+                        </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item px-4 " type="button" href = "<?php echo base_url();?>Account_Settings/view"><h3>Settings</h3></a></li>
+                        <li><a class="dropdown-item px-4" type="button" href = "<?php echo base_url();?>pages/view/about"><h3>About</h3></a></li>
+                        <li><a class="dropdown-item px-4" type="button" href = "<?php echo base_url();?>logout"><h3>Logout</h3></a></li>
+                    </ul>
                 <?php else:?>
                     <a href="<?php echo base_url('login'); ?>" class="list-link screen-sm-hidden">Sign in</a>
                     <a href="<?php echo base_url('register'); ?>" class="btn sign-up-btn fancy-border screen-sm-hidden">
@@ -84,12 +103,6 @@
                     </a>
 
                 <?php endif; ?>
-
-                    
-
-                <a href="#menu">
-                    &#9776;
-                </a>
 
             </div>
 
