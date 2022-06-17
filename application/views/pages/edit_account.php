@@ -1,29 +1,37 @@
-<div class="container mt-5 pt-5">
-    <?php echo validation_errors();?>
-    <?php echo form_open('edit_account/account_edit');?>
-        <input type="hidden" name="id" value="<?php echo $this->session->userdata('user')['id'];?>">
-        <div class="box mt-5 col-6 mx-auto border border-2">
-        <h2 class="text-center mt-2 pt-3"><b>Edit Account Settings</b></h2>
-        <div class="px-5 mx-3 pt-4 mt-3">
-        <div class="form-group mb-2">
-            <p>Email:</p>
-            <input type="text" class="form-control" name="email" placeholder="Enter Email" value="<?php echo $this->session->userdata('user')['email'];?>">
-        </div>
-    <!-- </form> -->
+<div class="container pt-5">
+   
+    <div class="create" style = "margin: 12rem auto;">
+        <h2 class="text-center mt-2 p-4"><b>Edit Account</b></h2>
+    
+       
+            <?php echo form_open('settings/edit_account');?>
+                <input type="hidden" name="id" value="<?php echo $this->session->userdata('user')['id'];?>">
+                <div class = "py-4">
 
-        <?php //echo form_open('edit_account/change_pass');?>
-                <div class="form-group mb-2">
-                    <p>New Password:</p>
-                    <input type="password" class="form-control" name="newpass" id="newpass" placeholder="Enter New Password">
+                    <div class="form-group mb-2 ">
+                        <label>Current Password: </label>
+                        <input type="password" class="form-control" name="password" id="newpass" placeholder="Enter Current Password">
+                    </div>
+
+                    <div class="form-group mb-2 ">
+                        <label>New Password:</label>
+                        <input type="password" class="form-control" name="newpass" id="newpass" placeholder="Enter New Password">
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label>Confirm Password:</label>
+                        <input type="password" class="form-control" name="confpass" id="confpass" placeholder="Confirm New Password">
+                    </div>
                 </div>
-                <div class="form-group mb-2">
-                    <p>Confirm Password:</p>
-                    <input type="password" class="form-control" name="confpass" id="confpass" placeholder="Confirm New Password">
+
+                <div class="error">
+                <?php echo validation_errors();?>
                 </div>
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-custom" name="submit">Submit</button>
+
+                <div class="my-5">
+                    <button type="submit" class="btn btn-post" name="submit">Submit</button>
                 </div>
-            </div>
-        </form>
+            </form>
+        
     </div>
 </div>
