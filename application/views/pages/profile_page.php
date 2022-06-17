@@ -34,7 +34,7 @@
                 <?php foreach ($posts as $post):?>
                     <div class="trending-news-box mb-5 ">
                         <div class="trending-news-img-box">
-                            <span class="trending-number place-items-center"><?php echo $post['catname']?></span>
+                            <a class="trending-number place-items-center" href="<?php echo base_url('categories/postsbycat/'); ?><?php echo $post['cat_id']; ?>"> <?php echo $post['catname']?></a>
                             <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image">
                         </div>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2022 at 09:44 AM
+-- Generation Time: Jun 17, 2022 at 09:50 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `date`) VALUES
+(1, 'General', '2022-06-17 14:06:24'),
+(2, 'Miscellaneous', '2022-06-17 14:06:24'),
+(3, 'TUP', '2022-06-17 14:06:43');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -32,20 +53,18 @@ CREATE TABLE `posts` (
   `user_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `cat_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `created_at`) VALUES
-(1, 16, 'title test', 'test', '2022-06-08 11:44:04'),
-(2, 4, 'test 2', 'tessssst', '2022-06-08 12:20:37'),
-(3, 16, 'create post test', 'teadawdwadawdwa', '2022-06-08 12:57:05'),
-(4, 16, 'create post test', 'teadawdwadawdwa', '2022-06-08 12:57:28'),
-(5, 16, 'final test', 'test', '2022-06-08 14:13:47'),
-(6, 14, 'MARKMARKMARKMARKMARK', 'MARKMARKMARKMARKMARK', '2022-06-10 06:23:08');
+INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `created_at`, `cat_id`) VALUES
+(1, 16, 'title test', 'test', '2022-06-08 11:44:04', 1),
+(10, 2, 'MARKMARKMARK', 'TESTMARK', '2022-06-17 07:24:42', 2),
+(11, 2, 'CHARD', 'MARKCHARD', '2022-06-17 07:25:20', 1);
 
 -- --------------------------------------------------------
 
@@ -66,9 +85,7 @@ CREATE TABLE `replies` (
 --
 
 INSERT INTO `replies` (`id`, `post_id`, `content`, `created_at`, `user_id`) VALUES
-(87, 6, 'Gavs', '2022-06-10 15:32:41', 14),
-(88, 6, 'ATest', '2022-06-10 15:42:41', 14),
-(89, 5, 'REPLY TEST 1', '2022-06-10 15:44:10', 14);
+(91, 1, 'test reply', '2022-06-17 14:04:22', 2);
 
 -- --------------------------------------------------------
 
@@ -110,11 +127,18 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `bio`, `profile_picture`,
 --
 
 --
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `posts_cat_id` (`cat_id`);
 
 --
 -- Indexes for table `replies`
@@ -137,16 +161,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -162,7 +192,7 @@ ALTER TABLE `user`
 -- Constraints for table `posts`
 --
 ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `posts_cat_id` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `replies`

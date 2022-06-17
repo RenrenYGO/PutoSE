@@ -4,8 +4,8 @@
     <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"> <img src="<?php echo base_url('/assets/images/featured/Debug01.png')?>" width="90" height="105" ></a>
     
     <span><a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"><?php echo $post['name'];?></a></span>
-
-    <div>Category: <?php echo $post['catname']?></div> <!-- MAKE THIS A BUTTON -->
+    
+    <a href="<?php echo base_url('categories/postsbycat/'); ?><?php echo $post['cat_id']; ?>"> <?php echo $post['catname']?></a>
 
     <div>
         <span>Title: <?php echo  $post['title'];?></span>   
