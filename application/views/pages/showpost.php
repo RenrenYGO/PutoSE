@@ -4,6 +4,9 @@
     <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"> <img src="<?php echo base_url('/assets/images/featured/Debug01.png')?>" width="90" height="105" ></a>
     
     <span><a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"><?php echo $post['name'];?></a></span>
+
+    <div>Category: <?php echo $post['catname']?></div> <!-- MAKE THIS A BUTTON -->
+
     <div>
         <span>Title: <?php echo  $post['title'];?></span>   
     </div>
@@ -31,9 +34,8 @@
             <div class="featured-content d-grid">
                 <span>REPLIES</span>
                     <?php foreach ($replies as $reply):?>
-                        <a href="<?php echo base_url('replies/'.$reply['id']);?>" class="trending-news-box">
+                        <div <?php echo base_url('replies/'.$reply['id']);?> class="trending-news-box">
                             <div class="trending-news-img-box">
-                                <span class="trending-number place-items-center">HOT</span>
                                 <img src="<?php echo base_url('assets/images/featured/yeiwave.gif');?>" width= "80" height="80" class="rounded rounded-circle">
                             </div>
 
@@ -42,7 +44,7 @@
                                 <div class="article-data">
                                     <span><?php echo $reply['created_at'];?></span>
                                     <span class="article-data-spacer"></span>
-                                    <span><?php echo $reply['name'];?></span>
+                                    <span><a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $reply['user_id']; ?>"><?php echo $reply['name'];?></a></span>
                                 </div>
 
                                 <h3 class="title article-title"><?php echo $reply['content'];?></h3>
