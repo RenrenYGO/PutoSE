@@ -83,16 +83,18 @@
                     
                     <!-- Dropdowm Menu -->
                     <ul class="dropdown-menu dropdown-menu-end  mx-3 my-2">
-                        <li><a class="dropdown-item px-3" href="<?php echo base_url('profile');?>" >
-                            <div class="logo-image mt-2">
+                        <li><a class="px-4" href="<?php echo base_url('profile');?>" >
+                        
+                            <div class="logo-image"  style="text-align:right; margin: 0 auto;">
                                 <img src="<?php echo base_url("/assets/images/featured/PROFILEPICPLACEHOLDER.png") ?>" width="40" height="40"  style="float:left;">
-                                <h3 class = "m-3" > <?php echo $this->session->userdata('user')['name'];?> </h3>
+                                
                             </div>
+                            <h2 class="mt-2"> <?php echo $this->session->userdata('user')['name'];?> </h2>
                             
                         </a>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item px-4 " type="button" href = "<?php echo base_url();?>Account_Settings/view"><h3>Settings</h3></a></li>
+                        <li><a class="dropdown-item px-4 " type="button" href = "<?php echo base_url();?>settings/edit_account"><h3>Settings</h3></a></li>
                         <li><a class="dropdown-item px-4" type="button" href = "<?php echo base_url();?>pages/view/about"><h3>About</h3></a></li>
                         <li><a class="dropdown-item px-4" type="button" href = "<?php echo base_url();?>logout"><h3>Logout</h3></a></li>
                     </ul>

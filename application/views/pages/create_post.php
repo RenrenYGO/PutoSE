@@ -1,5 +1,5 @@
 <div class="form bg ">
-    <div class="create ">
+    <div class="create" style= "margin: 10rem auto;">
         <div class = "Title">
             Create Post
         </div>
