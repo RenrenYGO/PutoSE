@@ -24,6 +24,7 @@
 
     <!-- Posts -->
     <section class="featured-articles section section-header-offset">
+    <span>POSTS</span>
 
         <div class="featured-articles-container container d-grid">
 
@@ -60,7 +61,7 @@
                 <?php foreach ($posts as $post):?>
                     <div class="trending-news-box">
                         <div class="trending-news-img-box">
-                            <span class="trending-number place-items-center">HOT</span>
+                            <a class="trending-number place-items-center" href="<?php echo base_url('categories/postsbycat/'); ?><?php echo $post['cat_id']; ?>"> <?php echo $post['catname']?>
                             <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"> <img src="./assets/images/featured/PROFILEPICPLACEHOLDER.png" alt="" class="article-image"></a>
                         </div>
 
