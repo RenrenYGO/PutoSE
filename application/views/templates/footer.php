@@ -19,37 +19,32 @@
                     <li class="list-item">
                         <a href="#" class="list-link"><i class="ri-twitter-line"></i></a>
                     </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link"><i class="ri-pinterest-line"></i></a>
-                    </li>
                 </ul>
 
                 <span class="copyright-notice">&copy;2022 PUTO. All rights reserved.</span>
             </div>
 
-            <div>
-                <h6 class="title footer-title">Categories</h6>
+              <!-- Newsletter -->
+    <section class="newsletter section">
 
-                <ul class="footer-list list">
-                    <li class="list-item">
-                        <a href="#" class="list-link">Travel</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Food</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Technology</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Health</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Nature</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Fitness</a>
-                    </li>
-                </ul>
+<div class="container">
+
+    <div class="form-container-inner">
+    <form id="newsletter" name="newsletter" method="post" action="<?php echo base_url();?>newsletter/index" onsubmit ='return validate()'>
+    <h3 class="title newsletter-title">Subscribe to PUTO</h3>
+        <p class="newsletter-description">Join our newsletter for the latest blog updates.</p>
+        <form action="" class="form">
+        <input type="email" name="email" id="email" style="width:250px;height:36px;" placeholder="Email address" class="ps-2 display border border-secondary border-1 rounded rounded-1"></input>
+        <button type="submit" value="Submit" class="btn btn-post">Subscribe</button>
+            </button>
+        </form>
+
+    </div>
+
+</div>
+
+</section>
+
 
             </div>
 

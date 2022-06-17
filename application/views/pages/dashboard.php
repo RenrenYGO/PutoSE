@@ -90,25 +90,3 @@
 
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter section">
-
-        <div class="container">
-
-            <div class="form-container-inner">
-                <h3 class="title newsletter-title">Subscribe to PUTO</h3>
-                <p class="newsletter-description">Join our newsletter for the latest blog updates.</p>
-
-                <form action="" class="form">
-                    <input class="form-input" type="text" placeholder="Enter your email address">
-                    <button class="btn form-btn" type="submit">
-                        <i class="ri-mail-send-line"></i>
-                    </button>
-                </form>
-
-            </div>
-
-        </div>
-
-    </section>
-
