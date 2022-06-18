@@ -14,8 +14,8 @@ class Replies extends CI_Controller{
             $this->load->view('templates/footer');
 		}else{
 			$this->replies_model->create_replies($post_id);
-			// redirect('posts/'.$id);
-            redirect('dashboard');
+			 redirect('post/'.$post_id);
+            //redirect('dashboard');
 		}
 	}
 }

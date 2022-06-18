@@ -458,13 +458,21 @@ label {
 }
 
 /* For Individual Post */
+.showpost{
+    max-width: 160rem;
+    margin: 0 auto;
+    margin-top: 4em;
+    padding: 0 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
 
 .castoria-box {
     padding: 0.5rem 0.5rem;
     border-radius: 15px;
     box-shadow: 2px 5px;
-    width: 50%;
-    height: 40%;
+    width: 55%;
+    min-height: 40%;
     border-bottom: 1px solid var(--transparent-light-color);
     background-color: white;
     border-top-right-radius: 15px;
@@ -472,20 +480,29 @@ label {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
-    font-size: 26px;
-    margin: 2em auto;
-    margin-top: 5em;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 auto;
     color: #0e1111;
 }
 
 .castoria-img-box {
-    position: relative;
-    font-size: 23px;
-    font-weight: bold;
+    
+    font-size: .7em;
+    font-weight: 600;
     flex-wrap: wrap;
     float: left;
     width: 100%;
-    height: var(--item-min-height-sm);
+    display: flex;
+    align-items: center;
+    
+}
+
+.content{
+    font-weight: 100; 
+    font-size: 1.5rem;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .comment {
@@ -517,6 +534,9 @@ label {
 .featured-articles-container,
 .featured-content {
     gap: var(--gap);
+}
+
+.posts{
     padding: 0 5rem;
 }
 
