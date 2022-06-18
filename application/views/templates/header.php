@@ -45,10 +45,10 @@
             <div class="menu" id="menu">
                 <ul class="list">
                     <li class="list-item">
-                        <a href="#" class="list-link">Categories</a>
+                        <a href="<?php echo base_url();?>pages/categories" class="list-link">Categories</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Posts</a>
+                        <a href="<?php echo base_url();?>pages/users" class="list-link" class="list-link">Users</a>
                     </li>
                     <li class="list-item">
                         <a href="#" class="list-link">Contact</a>

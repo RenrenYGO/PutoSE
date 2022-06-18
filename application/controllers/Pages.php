@@ -15,4 +15,30 @@ class Pages extends CI_Controller {
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer');
 	}
+
+    public function categories($page ='categories'){
+
+        if(!file_exists(APPPATH."views/pages/".$page.".php")) {
+           show_404();
+        }
+
+        $data['cats'] = $this->category_model->get_cats();
+
+		$this->load->view('templates/header');
+        $this->load->view('pages/'.$page, $data);
+        $this->load->view('templates/footer');
+	}
+
+    public function users($page ='users'){
+
+        if(!file_exists(APPPATH."views/pages/".$page.".php")) {
+           show_404();
+        }
+
+        $data['users'] = $this->profile_model->get_profiles();
+
+		$this->load->view('templates/header');
+        $this->load->view('pages/'.$page, $data);
+        $this->load->view('templates/footer');
+	}
 }
