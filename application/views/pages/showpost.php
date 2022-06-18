@@ -1,5 +1,5 @@
 
-<div class = "featured-articles-container showpost">
+<div class = "showpost">
     <div class="castoria-box">
         <div class="castoria-img-box">
             <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?>
@@ -23,20 +23,22 @@
 
     <div class="comment">
         <?php echo validation_errors(); ?>
-        <?php if(isset($_SESSION['user'])):?>
-            <?php echo form_open('replies/create/'.$post['id']); ?>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Comment your thoughts..." name="content">
-                </div>
-                
-                <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
-         
-            </form>
-        <?php endif; ?>
 
         <div class="featured-articles-container">
             <div class="featured-content ">
                 <span>REPLIES</span>
+                <?php if(isset($_SESSION['user'])):?>
+                    <div style="text-align:right;">
+                    <?php echo form_open('replies/create/'.$post['id']); ?>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Comment your thoughts..." name="content">
+                        </div>
+                        
+                        <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
+                        <button type="submit" class="m-3 btn btn-custom">Comment</button>
+                    </form>
+                </div>
+                <?php endif; ?>
                     <?php foreach ($replies as $reply):?>
                         <div <?php echo base_url('replies/'.$reply['id']);?> class="trending-news-box mb-4">
                             <div class="trending-news-img-box">
