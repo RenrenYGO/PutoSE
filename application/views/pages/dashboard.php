@@ -24,11 +24,10 @@
 
     <!-- Posts -->
     <section class="featured-articles section section-header-offset">
-    <span>POSTS</span>
 
         <div class="featured-articles-container container d-grid">
 
-            <div class="featured-content d-grid">
+            <div class="featured-content posts d-grid">
                 
                 <?php if(isset($_SESSION['user']['name'])):?>
                     <button class="btn sign-up-btn fancy-border screen-sm-hidden " >
