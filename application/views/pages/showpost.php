@@ -2,16 +2,16 @@
 <div class = "showpost">
     <div class="castoria-box">
         <div class="castoria-img-box">
-            <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?>
-                <?php echo $post['user_id']; ?>"> <img src="<?php echo base_url('/assets/images/featured/Debug01.png')?>" width="50" height="50" >
+            <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"> 
+                <img src="<?php echo base_url('/assets/images/featured/Debug01.png')?>" width="50" height="50" >
             </a>
 
-            <a href="<?php echo base_url('profile/viewprofile/'); ?>
-                <?php echo $post['user_id']; ?>"><?php echo $post['name'];?>
+            <a href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>">
+                <?php echo $post['name'];?>
             </a>
 
-            <a class="btn" href="<?php echo base_url('categories/postsbycat/'); ?>
-                <?php echo $post['cat_id']; ?>">&#9679 Posted on <?php echo $post['catname']?>
+            <a class="btn" href="<?php echo base_url('categories/postsbycat/'); ?><?php echo $post['cat_id']; ?>">&#9679 Posted on 
+                <?php echo $post['catname']?>
             </a>
         </div>
         
