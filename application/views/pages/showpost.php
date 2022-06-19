@@ -14,6 +14,15 @@
                 <?php echo $post['catname']?>
             </a>
         </div>
+
+        <div class="edit">
+            <?php if(isset($_SESSION['user']) && $this->session->userdata('user')['id'] == $post['user_id']):?>
+                <a class="btn btn-custom" id="edit" href="<?php echo base_url('posts/edit/'.$post['id']);?>">Edit Post</a>
+                <?php echo form_open('posts/delete/'.$post['id']);?>
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+            <?php endif;?>
+        </div>
         
         <?php echo  $post['title'];?>
         
