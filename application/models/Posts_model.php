@@ -66,4 +66,28 @@ class Posts_model extends CI_Model{
         
         return $query->result_array();
     }
+
+    public function update_post($data){
+        $data = array(
+            'user_id' => $data['postedBy'],
+            'title' => $data['title'],
+            'content' => $data['body'],
+            'cat_id' => $data['cat_id']
+        );
+
+        $this->db->where('id', $this->input->post('id'));
+        return $this->db->update('posts', $data);
+    }
+
+    public function delete_post($id){
+        $this->db->where('post_id', $id);
+        $this->db->delete('replies');
+
+        echo $this->db->last_query();
+
+        $this->db->where('id', $id);
+        $this->db->delete('posts');
+
+        return true;
+    }
 }
