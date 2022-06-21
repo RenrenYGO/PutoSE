@@ -735,6 +735,16 @@ label {
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
     margin: 0 2rem;
+    height: 30em;
+}
+
+.sidebar a{
+    color:  black;
+}
+
+.sidebar a:hover{
+    color:  var(--hover-dark-color);
+    text-decoration: underline;
 }
 
 .trending-news-box {
