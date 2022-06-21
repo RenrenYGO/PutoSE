@@ -1,23 +1,29 @@
 
-    <a href="#" class="m-5 trending-news-box">
+<div class = "profile">
+    <div class="m-3 cover-photo-container">
+        <?php if($user['profile_picture']!='noimage.jpg'):?>
+            <img src="<?php echo base_url('assets/images/profile_picture/' . $user['cover_photo']);?>" class= "cover-photo">
+        <?php else:?>
+            <img src="<?php echo base_url('assets/images/featured/defaultcover1.jpg');?>" class= "cover-photo" >
+        <?php endif;?>
+    </div>
+
     <div class="trending-profile-img-box">
         <?php if($user['profile_picture']!='noimage.jpg'):?>
         <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "80" height="80" class="rounded rounded-circle">
         <?php else:?>
-        <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "80" height="80" class="rounded rounded-circle">
+        <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "100" height="100" class="rounded rounded-circle">
         <?php endif;?>
+        <div class="text-dark text-center mt-3">
+            <h3><?php echo $user['name'];?></h3>
+        </div>
     </div>
-    </a>
-    <div class="text-dark text-center">
-        <h3><?php echo $user['name'];?></h3>
-    </div>
-
-    <div class="page-header"></div>
+    
     <div class="main">
 
         <div class="row">
             <div class="col-4 py-5 ">
-                <div class="bg-light text-dark border about ">
+                <div class="bg-light text-dark about ">
                     <h3>About Me</h3>
                     <p><?php echo $user['bio'];?></p>
                     <div class="mb-3">
@@ -29,7 +35,7 @@
                 </div>
             </div>
                
-            <div class="container col-6 py-5">
+            <div class="container col-8 my-5 pl-5">
             
                 <?php foreach ($posts as $post):?>
                     <div class="trending-news-box mb-5 ">
@@ -57,3 +63,4 @@
 
         </div>
     </div>
+</div>
