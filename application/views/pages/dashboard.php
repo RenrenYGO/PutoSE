@@ -83,7 +83,16 @@
             <div class="sidebar d-grid">
 
                 <h3 class="title featured-content-title">Top Posts</h3>
-
+                <a href ="#">1. wow</a>
+                <a href ="#">2. noice</a>
+                <a href ="#">3. goodjob</a>
+                <a href ="#">4. galing</a>
+                <a href ="#">5. dabest</a>
+                <a href ="#">6. lupit</p>
+                <a href ="#">7. nakamamangha</a>
+                <a href ="#">8. cool</a>
+                <a href ="#">9. sugoi</a>
+                <a href ="#">10. angas</a>
             </div>
 
         </div>

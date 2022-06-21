@@ -304,16 +304,7 @@ html {
     display: flex;
 }
 
-.about {
-    background-color: var(--secondary-background-color);
-    padding: 2rem 4rem;
-    border-radius: 15px;
-    box-shadow: 2px 5px;
-    text-align: center;
-    height: 20em;
-    width: 80%;
-    margin: auto;
-}
+
 
 /*for Forgot Password*/
 .box {
@@ -458,6 +449,66 @@ label {
     font-weight: bold;
 }
 
+/* For Profile page*/
+.profile{
+    max-width: 140rem;
+    width: 85%;
+    min-height: 100%;
+    margin: 0 auto;
+    margin-top: 3em;
+    padding: 0 10rem;
+    justify-content: center;
+    align-items: center;
+    display: flexbox;
+}
+.cover-photo-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    background-color: white;
+    border-bottom: 1px solid var(--transparent-light-color);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 2px 5px;
+    height: 17em;
+    object-fit: contain;
+}
+
+.cover-photo{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.trending-profile-img-box {
+    max-width: 200px;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    -webkit-transform: translate3d(0, -70%, 0);
+    -moz-transform: translate3d(0, -70%, 0);
+    -o-transform: translate3d(0, -70%, 0);
+    -ms-transform: translate3d(0, -70%, 0);
+    transform: translate3d(0, -40%, 0);
+}
+
+.about {
+    background-color: var(--secondary-background-color);
+    padding: 2rem 4rem;
+    border-radius: 15px;
+    box-shadow: 2px 5px;
+    text-align: center;
+    height: 20em;
+    width: 90%;
+ 
+}
+
 /* For Individual Post */
 .showpost{
     max-width: 160rem;
@@ -496,8 +547,14 @@ label {
     float: left;
     width: 100%;
     display: flex;
-    align-items: center;
     
+    justify-content: space-between;
+    
+}
+
+.postheader{
+    align-items: center;
+    display: flex;
 }
 
 .content{
@@ -678,6 +735,16 @@ label {
     border-bottom-left-radius: 15px;
     box-shadow: 2px 5px;
     margin: 0 2rem;
+    height: 30em;
+}
+
+.sidebar a{
+    color:  black;
+}
+
+.sidebar a:hover{
+    color:  var(--hover-dark-color);
+    text-decoration: underline;
 }
 
 .trending-news-box {
@@ -726,17 +793,7 @@ label {
     height: var(--item-min-height-sm);
 }
 
-.trending-profile-img-box {
-    max-width: 100px;
-    height: 100px;
-    width: 100px;
-    margin: auto;
-    -webkit-transform: translate3d(0, -70%, 0);
-    -moz-transform: translate3d(0, -70%, 0);
-    -o-transform: translate3d(0, -70%, 0);
-    -ms-transform: translate3d(0, -70%, 0);
-    transform: translate3d(0, 50%, 0);
-}
+
 
 .trending-number {
     position: absolute;

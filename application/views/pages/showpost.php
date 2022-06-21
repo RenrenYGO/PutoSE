@@ -2,27 +2,30 @@
 <div class = "showpost">
     <div class="castoria-box">
         <div class="castoria-img-box">
-            <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"> 
-                <img src="<?php echo base_url('/assets/images/featured/Debug01.png')?>" width="50" height="50" >
-            </a>
+            <div class="postheader">
+                <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"> 
+                    <img src="<?php echo base_url('/assets/images/featured/Debug01.png')?>" width="50" height="50" >
+                </a>
 
-            <a href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>">
-                <?php echo $post['name'];?>
-            </a>
+                <a href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>">
+                    <?php echo $post['name'];?>
+                </a>
 
-            <a class="btn" href="<?php echo base_url('categories/postsbycat/'); ?><?php echo $post['cat_id']; ?>">&#9679 Posted on 
-                <?php echo $post['catname']?>
-            </a>
+                <a class="btn" href="<?php echo base_url('categories/postsbycat/'); ?><?php echo $post['cat_id']; ?>">&#9679 Posted on 
+                    <?php echo $post['catname']?>
+                </a>
+</div>
+            <div class="postheader" style="float: right">
+                <?php if(isset($_SESSION['user']) && $this->session->userdata('user')['id'] == $post['user_id']):?>
+                    <a class="btn btn-custom" id="edit" href="<?php echo base_url('posts/edit/'.$post['id']);?>">Edit Post</a>
+                    <?php echo form_open('posts/delete/'.$post['id']);?>
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                    </form>
+                <?php endif;?>
+            </div>
         </div>
 
-        <div class="edit">
-            <?php if(isset($_SESSION['user']) && $this->session->userdata('user')['id'] == $post['user_id']):?>
-                <a class="btn btn-custom" id="edit" href="<?php echo base_url('posts/edit/'.$post['id']);?>">Edit Post</a>
-                <?php echo form_open('posts/delete/'.$post['id']);?>
-                    <input type="submit" value="Delete" class="btn btn-danger">
-                </form>
-            <?php endif;?>
-        </div>
+        
         
         <?php echo  $post['title'];?>
         
