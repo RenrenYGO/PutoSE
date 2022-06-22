@@ -51,7 +51,7 @@
                         <a href="<?php echo base_url();?>pages/users" class="list-link" class="list-link">Users</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Contact</a>
+                    <a href="<?php echo base_url();?>contact" class="list-link" class="list-link">Contact Us</a>
                     </li>
                 </ul>
             </div>
