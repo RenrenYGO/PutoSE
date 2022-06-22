@@ -21,7 +21,7 @@ class Replies_model extends CI_Model{
 	}
 
 	public function get_replies($id){
-		$this->db->select('replies.*, user.name');
+		$this->db->select('replies.*, user.name, user.profile_picture');
         $this->db->join('user', 'user.id = replies.user_id');
         $this->db->order_by('created_at', 'DESC');
         $query = $this->db->get_where('replies', array('post_id' => $id));

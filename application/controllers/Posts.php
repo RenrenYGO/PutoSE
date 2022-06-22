@@ -11,7 +11,7 @@ class Posts extends CI_Controller {
     }
     
     public function view($id){
-
+        
         $data['post'] = $this->posts_model->get_specific_post($id);
         $data['replies'] = $this->replies_model->get_replies($id);
 

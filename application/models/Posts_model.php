@@ -4,7 +4,7 @@ class Posts_model extends CI_Model{
 
     // GET ALL POST
     public function get_posts(){
-        $this->db->select('posts.*, user.name, categories.name AS catname');
+        $this->db->select('posts.*, user.name, user.profile_picture, categories.name AS catname');
         $this->db->join('user', 'user.id = posts.user_id');
         $this->db->order_by('created_at', 'DESC');
 
@@ -17,7 +17,7 @@ class Posts_model extends CI_Model{
 
     // GET SPECIFIC POST BY POST ID
     public function get_specific_post($id){
-        $this->db->select('posts.*, user.name, categories.name AS catname');
+        $this->db->select('posts.*, user.name, user.profile_picture, categories.name AS catname');
         $this->db->where('posts.id', $id);
         $this->db->join('user', 'user.id = posts.user_id');
         $this->db->order_by('created_at', 'DESC');

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2022 at 09:50 AM
+-- Generation Time: Jun 22, 2022 at 10:38 AM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- PHP Version: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,6 +45,50 @@ INSERT INTO `categories` (`id`, `name`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `email`, `message`) VALUES
+(1, 'cardo85@mail.com', 'aaaaa'),
+(2, 'ads@gmail.com', 'hhhh'),
+(3, 'tabo@gmail.com', 'albaz'),
+(4, 'final@gmail.com', 'aUMUaz'),
+(5, 'Thicc@gmail.com', '\r\n\r\n\r\npotatopotato'),
+(6, 'ninjaskpasser@gmail.com', 'Ban yas'),
+(8, 'Pogi@gmail.com', 'dd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newsletter`
+--
+
+CREATE TABLE `newsletter` (
+  `id` int(255) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `email`) VALUES
+(1, 'tabo@gmail.com'),
+(2, 'woketh12@mail.com');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -64,7 +108,8 @@ CREATE TABLE `posts` (
 INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `created_at`, `cat_id`) VALUES
 (1, 16, 'title test', 'test', '2022-06-08 11:44:04', 1),
 (10, 2, 'MARKMARKMARK', 'TESTMARK', '2022-06-17 07:24:42', 2),
-(11, 2, 'CHARD', 'MARKCHARD', '2022-06-17 07:25:20', 1);
+(11, 2, 'CHARD', 'MARKCHARD', '2022-06-17 07:25:20', 1),
+(12, 18, 'testing ', 'asdasdasd', '2022-06-22 07:37:59', 1);
 
 -- --------------------------------------------------------
 
@@ -85,7 +130,8 @@ CREATE TABLE `replies` (
 --
 
 INSERT INTO `replies` (`id`, `post_id`, `content`, `created_at`, `user_id`) VALUES
-(91, 1, 'test reply', '2022-06-17 14:04:22', 2);
+(91, 1, 'test reply', '2022-06-17 14:04:22', 2),
+(92, 1, 'hello', '2022-06-22 16:01:43', 18);
 
 -- --------------------------------------------------------
 
@@ -100,27 +146,29 @@ CREATE TABLE `user` (
   `password` varchar(100) NOT NULL,
   `bio` varchar(255) NOT NULL DEFAULT 'Insert your bio here',
   `profile_picture` varchar(255) NOT NULL DEFAULT 'noimage.jpg',
-  `code` varchar(6) NOT NULL
+  `code` varchar(6) NOT NULL,
+  `cover_photo` varchar(255) NOT NULL DEFAULT 'noimage.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `password`, `bio`, `profile_picture`, `code`) VALUES
-(1, 'asdasd', 'asdasd@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', ''),
-(2, 'das', 'ads@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', '<p>MINECRAFT</p>\r\n', '2__okishock.png', ''),
-(3, 'user0', 'user0@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', ''),
-(4, 'test1', 'test@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', ''),
-(5, 'asdasdasd', 'asdasdasd@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', ''),
-(9, 'Renren', 'renren@mail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', ''),
-(10, 'PasswordCheck0', 'pass0@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', ''),
-(11, 'PasswordCheck1', 'pass1@gmail.com', '$2y$10$TrxUiBfGZ9D458bMKYvniOGaJMzMm3Lx2T9zOmTrQXnQYf8Qm6AR6', '<p>Insert your bio here</p>\r\n', '11_6bbf245fe28be27c17d084df2f194d17-20200817155820.png', ''),
-(12, 'JOSE', 'uniportal02@gmail.com', '$2y$10$JlOdiJ/JMEFlAmckrc/KEetAGsndcx.NpaN2GqhgDCxNUeind.zci', 'Insert your bio here', 'noimage.jpg', ''),
-(13, 'User1', 'asdd@gmail.com', '$2y$10$kOHo9XjbGQnUCidrZNi18e8PT0wq6w8.HAkUuLrndbhX/tOEb9PSa', 'Insert your bio here', 'noimage.jpg', ''),
-(14, 'RICHARD', 'richard@gmai.com', '$2y$10$rgdD9CSgW5apNjtofP9rSegkei7mz7PLCGC9odMVo624h3z/g04Ry', 'Insert your bio here', 'noimage.jpg', ''),
-(15, 'asd', 'richardandrei.sunga@tup.edu.ph', '$2y$10$mVeWN856kzPtYJUHlV9sEuhvRZsMpqwHknlK8/vZawIMxqTpPnaea', 'Insert your bio here', 'noimage.jpg', '006828'),
-(16, 't', 't@gmail.com', '$2y$10$Ba28VjnPbS79WKfyBTSBH.mvSiCtfWg33xeCqRm/iFLb01yOAsqTS', 'Insert your bio here', 'noimage.jpg', '');
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `bio`, `profile_picture`, `code`, `cover_photo`) VALUES
+(1, 'asdasd', 'asdasd@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(2, 'das', 'ads@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', '<p>MINECRAFT</p>\r\n', '2__okishock.png', '', 'noimage.jpg'),
+(3, 'user0', 'user0@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(4, 'test1', 'test@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(5, 'asdasdasd', 'asdasdasd@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(9, 'Renren', 'renren@mail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(10, 'PasswordCheck0', 'pass0@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(11, 'PasswordCheck1', 'pass1@gmail.com', '$2y$10$TrxUiBfGZ9D458bMKYvniOGaJMzMm3Lx2T9zOmTrQXnQYf8Qm6AR6', '<p>Insert your bio here</p>\r\n', '11_6bbf245fe28be27c17d084df2f194d17-20200817155820.png', '', 'noimage.jpg'),
+(12, 'JOSE', 'uniportal02@gmail.com', '$2y$10$JlOdiJ/JMEFlAmckrc/KEetAGsndcx.NpaN2GqhgDCxNUeind.zci', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(13, 'User1', 'asdd@gmail.com', '$2y$10$kOHo9XjbGQnUCidrZNi18e8PT0wq6w8.HAkUuLrndbhX/tOEb9PSa', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(14, 'RICHARD', 'richard@gmai.com', '$2y$10$rgdD9CSgW5apNjtofP9rSegkei7mz7PLCGC9odMVo624h3z/g04Ry', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(15, 'asd', 'richardandrei.sunga@tup.edu.ph', '$2y$10$mVeWN856kzPtYJUHlV9sEuhvRZsMpqwHknlK8/vZawIMxqTpPnaea', 'Insert your bio here', 'noimage.jpg', '006828', 'noimage.jpg'),
+(16, 't', 't@gmail.com', '$2y$10$Ba28VjnPbS79WKfyBTSBH.mvSiCtfWg33xeCqRm/iFLb01yOAsqTS', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
+(18, 'sejo', 'sejo02toriel@gmail.com', '$2y$10$SazwmV79TA7UTqExxsCixOjm7uMSrmrrkFKz7GKk3uXuYSE2f.wgC', 'Insert your bio here', '18_101541143_2944142932289230_5102179466580268934_n.jpg', '', '18_119613878_2676931055954047_8602458832955978010_n.jpg');
 
 --
 -- Indexes for dumped tables
@@ -130,6 +178,18 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `bio`, `profile_picture`,
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `newsletter`
+--
+ALTER TABLE `newsletter`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -167,22 +227,34 @@ ALTER TABLE `categories`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `newsletter`
+--
+ALTER TABLE `newsletter`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables

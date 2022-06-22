@@ -40,4 +40,27 @@ class Edit_Profile extends CI_Controller{
         $this->user_model->update_profile($data, $profile_picture);
         redirect('profile');
     }
+
+    public function cover_edit(){
+        $data = $this->input->post();
+
+        $config['upload_path'] = APPPATH.'../assets/images/cover_photo/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = '50000';
+        $config['max_width'] = '50000';
+        $config['max_height'] = '50000';
+        $config['file_name'] = $this->session->userdata('user')['id']. '_'. $_FILES['cover_photo']['name'];
+        $config['remove_spaces'] = FALSE;
+        $this->load->library('upload',$config);
+        
+        if(!$this->upload->do_upload('cover_photo')){
+            $errors = array('error' => $this->upload->display_errors());
+            $cover_photo = 'noimage.jpg';
+        }else{
+            $cover_photo = $config['file_name'];
+        }
+
+        $this->user_model->update_cover($cover_photo);
+        redirect('profile');
+    }
 }

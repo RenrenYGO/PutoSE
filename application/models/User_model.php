@@ -19,6 +19,16 @@
             return $this->db->update('user', $data2);
         }
 
+        // UPDATE COVER PHOTO
+        public function update_cover($cover_photo){
+            $data2 = array(
+                'cover_photo' => $cover_photo
+            );
+
+            $this->db->where('id', $this->session->userdata('user')['id']);
+            return $this->db->update('user', $data2);
+        }
+        
         // UPDATE USER EMAIL
         public function update_email($data){
             $data2 = array(
