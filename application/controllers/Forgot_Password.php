@@ -70,7 +70,7 @@ class Forgot_Password extends CI_Controller{
          $to =  $email;
          $subject = 'Change Password';
          $from = 'thinklikblog@gmail.com';
-         $password = ''; //get password from env file
+         $password = env('PASSWORD'); //get password from env file
 
          // Config setup
          $config = array(
