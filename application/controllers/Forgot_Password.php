@@ -69,7 +69,7 @@ class Forgot_Password extends CI_Controller{
      {
          $to =  $email;
          $subject = 'Change Password';
-         $from = 'thinklikblog@gmail.com';
+         $from = 'putomicroblog@gmail.com';
          $password = env('PASSWORD'); //get password from env file
 
          // Config setup
@@ -78,7 +78,7 @@ class Forgot_Password extends CI_Controller{
              'smtp_host' => 'ssl://smtp.gmail.com',
              'smtp_port' => '465',
              'smtp_timeout' => '60',
-             'smtp_user' => 'thinklikblog@gmail.com',
+             'smtp_user' => $from,
              'smtp_pass' => $password,
              'charset' => 'utf-8',
              'newline' => "\r\n",
