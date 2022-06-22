@@ -86,8 +86,11 @@
                         <li><a class="px-4" href="<?php echo base_url('profile');?>" >
                         
                             <div class="logo-image"  style="text-align:right; margin: 0 auto;">
-                                <img src="<?php echo base_url("/assets/images/featured/PROFILEPICPLACEHOLDER.png") ?>" width="40" height="40"  style="float:left;">
-                                
+                                <?php if($user['profile_picture']!='noimage.jpg'):?>
+                                <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "40" height="40" style="float:left;" class="rounded rounded-circle">
+                                <?php else:?>
+                                <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "40" height="40" style="float:left;" class="rounded rounded-circle">
+                                <?php endif;?>
                             </div>
                             <h2 class="mt-2"> <?php echo $this->session->userdata('user')['name'];?> </h2>
                             

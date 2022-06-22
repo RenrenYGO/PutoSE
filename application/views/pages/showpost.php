@@ -4,7 +4,11 @@
         <div class="castoria-img-box">
             <div class="postheader">
                 <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"> 
-                    <img src="<?php echo base_url('/assets/images/featured/Debug01.png')?>" width="50" height="50" >
+                    <?php if($post['profile_picture']!='noimage.jpg'):?>
+                    <img src="<?php echo base_url('assets/images/profile_picture/' . $post['profile_picture']);?>" width= "80" height="80" class="rounded rounded-circle">
+                    <?php else:?>
+                    <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "100" height="100" class="rounded rounded-circle">
+                    <?php endif;?>
                 </a>
 
                 <a href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>">
@@ -54,7 +58,11 @@
                     <?php foreach ($replies as $reply):?>
                         <div <?php echo base_url('replies/'.$reply['id']);?> class="trending-news-box mb-4">
                             <div class="trending-news-img-box">
-                                <img src="<?php echo base_url('assets/images/featured/yeiwave.gif');?>" width= "80" height="80" class="rounded rounded-circle">
+                                <?php if($reply['profile_picture']!='noimage.jpg'):?>
+                                <img src="<?php echo base_url('assets/images/profile_picture/' . $reply['profile_picture']);?>" width= "80" height="80" class="rounded rounded-circle">
+                                <?php else:?>
+                                <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "100" height="100" class="rounded rounded-circle">
+                                <?php endif;?>
                             </div>
 
                             <div class="trending-news-data">
