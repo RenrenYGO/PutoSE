@@ -62,10 +62,6 @@
                     <i class="ri-moon-line moon-icon"></i>
                 </button>
 
-                <button class="btn place-items-center" id="search-icon">
-                    <i class="ri-search-line"></i>
-                </button>
-
                 <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon">
                     <i class="ri-menu-3-line open-menu-icon"></i>
                     <i class="ri-close-line close-menu-icon"></i>

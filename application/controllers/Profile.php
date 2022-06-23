@@ -10,6 +10,17 @@ class Profile extends CI_Controller{
         $this->user = $this->session->userdata('user');
     }
 
+    public function skeyword(){
+        $key = $this->input->post('title');
+        $data['pagetit'] = 'Searched: '.$key;
+        $data['users'] = $this->profile_model->get_profiles_by_search($key);
+        $data['pops'] = $this->posts_model->get_posts_by_popularity();
+
+        $this->load->view('templates/header');
+        $this->load->view('pages/users', $data);
+        $this->load->view('templates/footer');
+    }
+
     public function index(){
         $data['user'] = $this->profile_model->get_profile(FALSE);
         $data['posts'] = $this->posts_model->get_posts_by_user(FALSE);

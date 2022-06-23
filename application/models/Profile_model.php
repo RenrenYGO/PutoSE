@@ -6,6 +6,12 @@ class Profile_model extends CI_Model{
         $this->load->database();
     }
 
+    public function get_profiles_by_search($key){
+        $this->db->like('name',$key);
+        $query = $this->db->get('user');
+        return $query->result_array();
+    }
+
     public function get_profiles(){
         // $this->db->order_by('name');
         $query = $this->db->get('user');
