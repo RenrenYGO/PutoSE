@@ -66,38 +66,35 @@
                     <i class="ri-search-line"></i>
                 </button>
 
-                <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon">
-                    <i class="ri-menu-3-line open-menu-icon"></i>
-                    <i class="ri-close-line close-menu-icon"></i>
-                </button>
-
                 <?php $user = $this->session->userdata('user');
                 if(isset($user) && $user!=null):?>
 
-                    
-                    
-                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <a href="#menu"> &#9776;</a>
-                    <i class="bi bi-list h3"></i>
+                    <button class="btn place-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ri-menu-3-line open-menu-icon"></i>
                     </button>
                     
                     <!-- Dropdowm Menu -->
                     <ul class="dropdown-menu dropdown-menu-end  mx-3 my-2">
-                        <li><a class="px-4" href="<?php echo base_url('profile');?>" >
+                        <li><a class="dropdown-item d-flex align-items-center" href="<?php echo base_url('profile');?>" >
                         
-                            <div class="logo-image"  style="text-align:right; margin: 0 auto;">
+                            <div class="logo-image mt-2" >
                                 <?php if($user['profile_picture']!='noimage.jpg'):?>
                                 <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "40" height="40" style="float:left;" class="rounded rounded-circle">
                                 <?php else:?>
                                 <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "40" height="40" style="float:left;" class="rounded rounded-circle">
                                 <?php endif;?>
+                                
                             </div>
-                            <h2 class="mt-2"> <?php echo $this->session->userdata('user')['name'];?> </h2>
+                            <h3><?php echo $this->session->userdata('user')['name'];?></h3>
                             
                         </a>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item px-4 " type="button" href = "<?php echo base_url();?>settings/edit_account"><h3>Settings</h3></a></li>
+                        <li><a class="dropdown-item px-4  screen-lg-hidden" type="button"  href="<?php echo base_url();?>pages/categories" ><h3>Categories</h3></a></li>
+                        <li><a class="dropdown-item px-4  screen-lg-hidden" type="button" href="<?php echo base_url();?>pages/users"><h3>Users</h3></a></li>
+                        <li><a class="dropdown-item px-4  screen-lg-hidden" type="button" href="<?php echo base_url();?>contact"><h3>Contact Us</h3></a></li>
+
+                        <li><a class="dropdown-item px-4 " type="button" href = "<?php echo base_url();?>settings/edit_account" ><h3>Settings</h3></a></li>
                         <li><a class="dropdown-item px-4" type="button" href = "<?php echo base_url();?>pages/view/about"><h3>About</h3></a></li>
                         <li><a class="dropdown-item px-4" type="button" href = "<?php echo base_url();?>logout"><h3>Logout</h3></a></li>
                     </ul>

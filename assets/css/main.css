@@ -161,6 +161,14 @@ html {
     transition: opacity .25s ease-in;
 }
 
+.dropdown-menu {
+    min-width:15rem;
+    background-color: var(--secondary-background-color);
+    
+}
+.dropdown-menu a{
+    color: white;
+}
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
