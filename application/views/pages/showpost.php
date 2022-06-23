@@ -34,6 +34,28 @@
         <?php echo  $post['title'];?>
         
         <p class="content mt-3" ><?php echo $post['content'];?></p>
+
+        <?php if(isset($_SESSION['user'])):?>
+                    
+                    <div class="d-flex mb-3">
+                        <?php echo form_open('/posts/upvote/'.$post['id']); ?>
+                            <div class="input-group ms-2 me-1 pe-2 ps-1">
+                                <input name="upvote" type="hidden" value="<?php echo $post['id']?>">
+                                    <button class="btn bg-success" type="submit">
+                                    <?php echo $post['upvote']; ?></button>
+                            </div>
+                        </form>
+
+                        <?php echo form_open('/posts/downvote/'.$post['id']); ?>
+                            <div class="input-group me-3 pe-2 ps-1">
+                                <input name="downvote" type="hidden" value="<?php echo $post['id']?>">
+                                <button class="btn bg-danger" type="submit">
+                                    <?php echo $post['downvote']; ?>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+        <?php endif; ?>
        
     </div>
 
@@ -75,33 +97,31 @@
 
                                 <h3 class="title article-title"><?php echo $reply['content'];?></h3>
 
+                                <?php if(isset($_SESSION['user'])):?>
+                                    <div class="d-flex mb-3">
+                                        <?php echo form_open('/replies/upvoteR/'.$reply['id']."/".$post['id']); ?>
+                                            <div class="input-group ms-1 me-1 pe-2 ps-1">
+                                                <input name="upvote" type="hidden" value="<?php echo $reply['id']?>">
+                                                <button class="btn bg-success" type="submit"> 
+                                                    <?php echo $reply['upvote']; ?>    
+                                                </button>
+                                            </div>
+                                        </form>
+                                    
+                                        <?php echo form_open('/replies/downvoteR/'.$reply['id']."/".$post['id']); ?>
+                                            <div class="input-group  pe-2 ps-1">
+                                                <input name="downvote" type="hidden" value="<?php echo $reply['id']?>">
+                                                <button class="btn bg-danger" type="submit">
+                                                <?php echo $reply['downvote']; ?></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                <?php endif; ?>
+
                             </div>
                         </div>
                     <?php endforeach;?>
             </div>
         </div>
-
-        <?php if(isset($_SESSION['user'])):?>
-                    
-                    <div class="d-flex mb-3">
-                        <?php echo form_open('/posts/upvote/'.$post['id']); ?>
-                            <div class="input-group ms-2 me-1 pe-2 ps-1">
-                                <input name="upvote" type="hidden" value="<?php echo $post['id']?>">
-                                    <button class="btn bg-success" type="submit">
-                                    <?php echo $post['upvote']; ?></button>
-                            </div>
-                        </form>
-
-                        <?php echo form_open('/posts/downvote/'.$post['id']); ?>
-                            <div class="input-group me-3 pe-2 ps-1">
-                                <input name="downvote" type="hidden" value="<?php echo $post['id']?>">
-                                <button class="btn bg-danger" type="submit">
-                                    <?php echo $post['downvote']; ?>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-        <?php endif; ?>
-
     </div>
 </div>

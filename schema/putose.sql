@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2022 at 11:02 AM
+-- Generation Time: Jun 23, 2022 at 12:01 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -113,7 +113,7 @@ INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `created_at`, `cat_id`
 (13, 2, 'TEST', 'TEST', '2022-06-23 07:54:09', 2, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0),
 (14, 2, 'TEST1', 'TEST1', '2022-06-23 08:02:32', 1, '{\"react_ids\":[]}', '{\"react2_ids\":[]}', 0, 0),
 (15, 2, 'Test2', 'Test2', '2022-06-23 08:05:04', 3, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0),
-(16, 2, 'TEST3', '3', '2022-06-23 08:05:31', 3, '{\"react_ids\":[]}', '{\"react2_ids\":[]}', 0, 0);
+(16, 2, 'TEST3', '3', '2022-06-23 08:05:31', 3, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -126,8 +126,22 @@ CREATE TABLE `replies` (
   `post_id` int(255) NOT NULL,
   `content` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `user_id` int(255) NOT NULL
+  `user_id` int(255) NOT NULL,
+  `react_ids` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '{"react_ids":[]}' CHECK (json_valid(`react_ids`)),
+  `react2_ids` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '{"react2_ids":[]}',
+  `upvote` int(255) NOT NULL,
+  `downvote` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `replies`
+--
+
+INSERT INTO `replies` (`id`, `post_id`, `content`, `created_at`, `user_id`, `react_ids`, `react2_ids`, `upvote`, `downvote`) VALUES
+(94, 16, 'reply0', '2022-06-23 17:29:59', 2, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0),
+(95, 16, 'reply1', '2022-06-23 17:39:57', 2, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[\"2\"]}', 1, 1),
+(96, 15, 'das', '2022-06-23 17:40:36', 2, '{\"react_ids\":[]}', '{\"react2_ids\":[\"2\"]}', 0, 1),
+(97, 14, 'asd', '2022-06-23 17:41:03', 2, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -244,7 +258,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `user`
