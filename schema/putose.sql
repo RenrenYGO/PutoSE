@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2022 at 10:38 AM
+-- Generation Time: Jun 23, 2022 at 11:02 AM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.25
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -98,18 +98,22 @@ CREATE TABLE `posts` (
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `cat_id` int(255) NOT NULL
+  `cat_id` int(255) NOT NULL,
+  `react_ids` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '{"react_ids":[]}',
+  `react2_ids` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '{"react2_ids":[]}',
+  `upvote` int(255) NOT NULL,
+  `downvote` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `created_at`, `cat_id`) VALUES
-(1, 16, 'title test', 'test', '2022-06-08 11:44:04', 1),
-(10, 2, 'MARKMARKMARK', 'TESTMARK', '2022-06-17 07:24:42', 2),
-(11, 2, 'CHARD', 'MARKCHARD', '2022-06-17 07:25:20', 1),
-(12, 18, 'testing ', 'asdasdasd', '2022-06-22 07:37:59', 1);
+INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `created_at`, `cat_id`, `react_ids`, `react2_ids`, `upvote`, `downvote`) VALUES
+(13, 2, 'TEST', 'TEST', '2022-06-23 07:54:09', 2, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0),
+(14, 2, 'TEST1', 'TEST1', '2022-06-23 08:02:32', 1, '{\"react_ids\":[]}', '{\"react2_ids\":[]}', 0, 0),
+(15, 2, 'Test2', 'Test2', '2022-06-23 08:05:04', 3, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0),
+(16, 2, 'TEST3', '3', '2022-06-23 08:05:31', 3, '{\"react_ids\":[]}', '{\"react2_ids\":[]}', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -124,14 +128,6 @@ CREATE TABLE `replies` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `user_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `replies`
---
-
-INSERT INTO `replies` (`id`, `post_id`, `content`, `created_at`, `user_id`) VALUES
-(91, 1, 'test reply', '2022-06-17 14:04:22', 2),
-(92, 1, 'hello', '2022-06-22 16:01:43', 18);
 
 -- --------------------------------------------------------
 
@@ -242,7 +238,7 @@ ALTER TABLE `newsletter`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `replies`

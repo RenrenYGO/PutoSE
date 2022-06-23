@@ -1,20 +1,7 @@
 
    
-
     <!-- Search -->
     <div class="search-form-container container" id="search-form-container">
-
-        <div class="form-container-inner">
-
-            <form action="" class="form">
-                <input class="form-input" type="text" placeholder="What are you looking for?">
-                <button class="btn form-btn" type="submit">
-                    <i class="ri-search-line"></i>
-                </button>
-            </form>
-            <span class="form-note">Or press ESC to close.</span>
-
-        </div>
 
         <button class="btn form-close-btn place-items-center" id="form-close-btn">
             <i class="ri-close-line"></i>
@@ -24,6 +11,15 @@
 
     <!-- Posts -->
     <section class="featured-articles section section-header-offset">
+    <div class="text-dark text-left mt-3">
+        <h1><?php echo $pagetit; ?></h1>
+        <form action = "<?php echo site_url('posts/skeyword/');?>" method="post">
+          <div class="input-group">
+            <input type="text" name="title" placeholder="Search..." class=" bg-light border border-secondary form-control">  
+            <button class="btn bg-light border-start-0 border border-secondary" type="submit"> <i class="ri-search-line"></i></button>
+          </div>
+        </form>
+    </div>
 
         <div class="featured-articles-container container d-grid">
 
@@ -88,16 +84,12 @@
             <div class="sidebar d-grid">
 
                 <h3 class="title featured-content-title">Top Posts</h3>
-                <a href ="#">1. wow</a>
-                <a href ="#">2. noice</a>
-                <a href ="#">3. goodjob</a>
-                <a href ="#">4. galing</a>
-                <a href ="#">5. dabest</a>
-                <a href ="#">6. lupit</p>
-                <a href ="#">7. nakamamangha</a>
-                <a href ="#">8. cool</a>
-                <a href ="#">9. sugoi</a>
-                <a href ="#">10. angas</a>
+
+                <?php $i = 0; foreach ($pops as $pop):?>
+                    <a href="<?php echo base_url('post/'.$pop['id']);?>"><h3 class="title article-title"> <?php echo $pop['title'];?></h3></a>
+                    <?php if (++$i == 10) break;?>
+                <?php endforeach;?>
+
             </div>
 
         </div>
