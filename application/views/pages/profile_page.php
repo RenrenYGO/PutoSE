@@ -50,19 +50,20 @@
                 <?php foreach ($posts as $post):?>
                     <div class="trending-news-box mb-5 ">
                         <div class="trending-news-img-box">
-                            <a class="trending-number place-items-center" href="<?php echo base_url('categories/postsbycat/'); ?><?php echo $post['cat_id']; ?>"> <?php echo $post['catname']?></a>
+                            <a class="btn post-user-image" >
                             <?php if($user['profile_picture']!='noimage.jpg'):?>
                             <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "80" height="80" class="rounded rounded-circle">
                             <?php else:?>
-                            <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "100" height="100" class="rounded rounded-circle">
+                            <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "80" height="80" class="rounded rounded-circle">
                             <?php endif;?>
+                            <?php echo $post['name'];?></a>
                         </div>
 
                         <div class="trending-news-data">
                             <div class="article-data">
-                                <span><?php echo $post['created_at'];?></span>
+                                <a href="<?php echo base_url('categories/postsbycat/'.$post['cat_id']); ?>">Posted on <?php echo $post['catname']?></a> 
                                 <span class="article-data-spacer"></span>
-                                <span><?php echo $post['name'];?></span>
+                                <span><?php echo substr($post['created_at'], 0, 10);?></span>
                             </div>
 
                             <h3 class="title article-title">

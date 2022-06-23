@@ -54,7 +54,7 @@ class Posts_model extends CI_Model{
 
     public function get_posts_by_cat($id){
 
-        $this->db->select('posts.*, user.name, categories.name AS catname');
+        $this->db->select('posts.*, user.name, categories.name AS catname, user.profile_picture');
         $this->db->join('user', 'user.id = posts.user_id');
         $this->db->order_by('created_at', 'DESC');
 
