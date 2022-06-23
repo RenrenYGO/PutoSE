@@ -18,4 +18,18 @@ class Replies extends CI_Controller{
             //redirect('dashboard');
 		}
 	}
+
+	public function upvoteR($id,$post_id){
+		$this->replies_model->upvote_reply($id);
+		$data['post'] = $this->posts_model->get_specific_post($post_id);
+		$data['replies'] = $this->replies_model->get_replies($id);
+		redirect('post/'.$post_id);
+	}
+	
+	public function downvoteR($id,$post_id){
+		$this->replies_model->downvote_reply($id);
+		$data['post'] = $this->posts_model->get_specific_post($post_id);
+		$data['replies'] = $this->replies_model->get_replies($id);
+		redirect('post/'.$post_id);
+	}
 }

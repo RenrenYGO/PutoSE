@@ -94,11 +94,11 @@ class Posts extends CI_Controller {
 
     public function upvote($id){
         $this->posts_model->upvote_post($id);
-        $this->view($this->input->post('upvote'));
+        redirect('dashboard');
     }
     
     public function downvote($id){
         $this->posts_model->downvote_post($id);
-        $this->view($this->input->post('downvote'));
+        redirect('dashboard');
     }
 }
