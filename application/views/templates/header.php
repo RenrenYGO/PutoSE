@@ -66,8 +66,8 @@
                     <i class="ri-search-line"></i>
                 </button>
 
-                <?php $user = $this->session->userdata('user');
-                if(isset($user) && $user!=null):?>
+                <?php $sess_user = $this->session->userdata('user');
+                if(isset($sess_user) && $sess_user!=null):?>
 
                     <button class="btn place-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="ri-menu-3-line open-menu-icon"></i>

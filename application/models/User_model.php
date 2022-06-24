@@ -8,26 +8,12 @@
         }
 
         // UPDATE USER PROFILE
-        public function update_profile($data, $profile_picture){  
-            $data2 = array(
-                'bio' => $data['bio'],
-                'name' => $data['name'],
-                'profile_picture' => $profile_picture
-            );
+        public function update_profile($data){  
 
             $this->db->where('id', $this->session->userdata('user')['id']);
-            return $this->db->update('user', $data2);
+            return $this->db->update('user', $data);
         }
 
-        // UPDATE COVER PHOTO
-        public function update_cover($cover_photo){
-            $data2 = array(
-                'cover_photo' => $cover_photo
-            );
-
-            $this->db->where('id', $this->session->userdata('user')['id']);
-            return $this->db->update('user', $data2);
-        }
         
         // UPDATE USER EMAIL
         public function update_email($data){
