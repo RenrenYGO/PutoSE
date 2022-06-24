@@ -558,7 +558,7 @@ label {
 }
 
 .edit-profile-photo {
-    margin: -5em 0em 0 7em;
+    margin: -5em 0em 0 6em;
     
     align-items: center;
    
@@ -812,6 +812,14 @@ label {
 
 .sidebar a{
     color:  black;
+    font-weight: 600;
+   
+}
+
+.top-links{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.3rem;
 }
 
 .sidebar a:hover{

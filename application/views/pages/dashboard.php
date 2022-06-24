@@ -89,12 +89,14 @@
 
             </div>
 
-            <div class="sidebar d-grid">
+            <div class="sidebar">
 
                 <h3 class="title featured-content-title">Top Posts</h3>
 
                 <?php $i = 0; foreach ($pops as $pop):?>
-                    <a href="<?php echo base_url('post/'.$pop['id']);?>"><h3 class="title article-title"> <?php echo $pop['title'];?></h3></a>
+                    <div class='top-links'>
+                        <a href="<?php echo base_url('post/'.$pop['id']);?>"> <?php echo $i+1,'. ',$pop['title'];?></a>
+                    </div>
                     <?php if (++$i == 10) break;?>
                 <?php endforeach;?>
 

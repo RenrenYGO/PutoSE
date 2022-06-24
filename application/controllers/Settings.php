@@ -28,8 +28,8 @@ class Settings extends CI_Controller{
         if($this->form_validation->run()===false){
             $data["error"] = validation_errors();
             
-            $this->load->view('templates/header');
-            $this->load->view('pages/edit_account',$data);
+            $this->load->view('templates/header', $data);
+            $this->load->view('pages/edit_account');
             $this->load->view('templates/footer');
         } else {
             $data = $this->input->post();
