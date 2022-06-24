@@ -13,7 +13,9 @@ class Pages extends CI_Controller {
         if(isset($sess_user) && $sess_user!=null)
             $data['user'] = $this->profile_model->get_profile();
             
+        $data['pagetit'] = 'Dashboard';
         $data['posts'] = $this->posts_model->get_posts();
+        $data['pops'] = $this->posts_model->get_posts_by_popularity();
 
 		$this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page);
@@ -30,7 +32,9 @@ class Pages extends CI_Controller {
         if(isset($sess_user) && $sess_user!=null)
             $data['user'] = $this->profile_model->get_profile();
 
+        $data['pagetit'] = 'Categories:';
         $data['cats'] = $this->category_model->get_cats();
+        $data['pops'] = $this->posts_model->get_posts_by_popularity();
 
 		$this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page);
@@ -47,7 +51,9 @@ class Pages extends CI_Controller {
         if(isset($sess_user) && $sess_user!=null)
             $data['user'] = $this->profile_model->get_profile();
 
+        $data['pagetit'] = 'Users:';
         $data['users'] = $this->profile_model->get_profiles();
+        $data['pops'] = $this->posts_model->get_posts_by_popularity();
 
 		$this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page);

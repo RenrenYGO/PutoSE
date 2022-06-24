@@ -146,6 +146,28 @@
                                 <a href="<?php echo base_url('post/'.$post['id']);?>" >
                                 <?php echo $post['title'];?></a>
                             </h3>
+
+                            <?php if(isset($_SESSION['user'])):?>
+                                <div class="d-flex mb-3">
+                                    <?php echo form_open('/posts/upvote/'.$post['id']); ?>
+                                        <div class="input-group ms-2 me-1 pe-2 ps-1">
+                                            <input name="upvote" type="hidden" value="<?php echo $post['id']?>">
+                                                <button class="btn bg-success" type="submit">
+                                                <?php echo $post['upvote']; ?></button>
+                                        </div>
+                                    </form>
+
+                                    <?php echo form_open('/posts/downvote/'.$post['id']); ?>
+                                        <div class="input-group me-3 pe-2 ps-1">
+                                            <input name="downvote" type="hidden" value="<?php echo $post['id']?>">
+                                            <button class="btn bg-danger" type="submit">
+                                                <?php echo $post['downvote']; ?>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            <?php endif; ?>
+
                         </div>
                     </div>
                 <?php endforeach;?>

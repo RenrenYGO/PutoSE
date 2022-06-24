@@ -9,6 +9,17 @@ class Posts extends CI_Controller {
         parent::__construct();
         $this->user = $this->session->userdata('user');
     }
+
+    public function skeyword(){
+        $key = $this->input->post('title');
+        $data['pagetit'] = 'Searched: '.$key;
+        $data['posts'] = $this->posts_model->get_posts_by_search($key);
+        $data['pops'] = $this->posts_model->get_posts_by_popularity();
+
+        $this->load->view('templates/header');
+        $this->load->view('pages/dashboard', $data);
+        $this->load->view('templates/footer');
+    }
     
     public function view($id){
         
@@ -78,6 +89,16 @@ class Posts extends CI_Controller {
 
     public function delete($id){
         $this->posts_model->delete_post($id);
+        redirect('dashboard');
+    }
+
+    public function upvote($id){
+        $this->posts_model->upvote_post($id);
+        redirect('dashboard');
+    }
+    
+    public function downvote($id){
+        $this->posts_model->downvote_post($id);
         redirect('dashboard');
     }
 }

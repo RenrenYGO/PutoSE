@@ -62,12 +62,12 @@
                     <i class="ri-moon-line moon-icon"></i>
                 </button>
 
-                <button class="btn place-items-center" id="search-icon">
-                    <i class="ri-search-line"></i>
-                </button>
-
                 <?php $sess_user = $this->session->userdata('user');
                 if(isset($sess_user) && $sess_user!=null):?>
+                <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon">
+                    <i class="ri-menu-3-line open-menu-icon"></i>
+                    <i class="ri-close-line close-menu-icon"></i>
+                </button>
 
                     <button class="btn place-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="ri-menu-3-line open-menu-icon"></i>
