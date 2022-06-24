@@ -25,8 +25,8 @@ class Profile extends CI_Controller{
         $data['user'] = $this->profile_model->get_profile(FALSE);
         $data['posts'] = $this->posts_model->get_posts_by_user(FALSE);
 
-        $this->load->view('templates/header');
-        $this->load->view('pages/profile_page',$data);
+        $this->load->view('templates/header',$data);
+        $this->load->view('pages/profile_page');
         $this->load->view('templates/footer');
     }
 
@@ -35,8 +35,8 @@ class Profile extends CI_Controller{
         $data['posts'] = $this->posts_model->get_posts_by_user($id);
         
 
-        $this->load->view('templates/header');
-        $this->load->view('pages/profile_page',$data);
+        $this->load->view('templates/header',$data);
+        $this->load->view('pages/profile_page');
         $this->load->view('templates/footer');
     }
 }

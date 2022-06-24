@@ -1,26 +1,11 @@
 
    
 
-    <!-- Search -->
-    <div class="search-form-container container" id="search-form-container">
-
-        <button class="btn form-close-btn place-items-center" id="form-close-btn">
-            <i class="ri-close-line"></i>
-        </button>
-
-    </div>
-
     <!-- Posts -->
     <section class="featured-articles section section-header-offset">
 
-    <div class="text-dark text-left mt-3">
+    <div class="container text-dark mx-5 px-5">
         <h1><?php echo $pagetit; ?></h1>
-        <form action = "<?php echo site_url('categories/skeyword/');?>" method="post">
-          <div class="input-group">
-            <input type="text" name="title" placeholder="Search..." class=" bg-light border border-secondary form-control">  
-            <button class="btn bg-light border-start-0 border border-secondary" type="submit"> <i class="ri-search-line"></i></button>
-          </div>
-        </form>
     </div>
 
         <div class="featured-articles-container container d-grid">

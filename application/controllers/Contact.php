@@ -8,14 +8,17 @@ class Contact extends CI_Controller{
     }
 
     public function index(){
+        $sess_user = $this->session->userdata('user');
+        if(isset($sess_user) && $sess_user!=null)
+            $data['user'] = $this->profile_model->get_profile();
         $data['title'] = 'Enter your Query';
         $this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
-        $this->load->view('templates/header');
-        $this->load->view('pages/contact',$data);
-        $this->load->view('templates/footer');
+        
 
         if($this->form_validation->run() == FALSE){
             $this->load->view('templates/header', $data);
+            $this->load->view('pages/contact');
+            $this->load->view('templates/footer');
         }else{
             $data = array(
 				'email' => $this->input->post('email'),

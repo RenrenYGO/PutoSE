@@ -1,24 +1,8 @@
 
-   
-    <!-- Search -->
-    <div class="search-form-container container" id="search-form-container">
-
-        <button class="btn form-close-btn place-items-center" id="form-close-btn">
-            <i class="ri-close-line"></i>
-        </button>
-
-    </div>
-
-    <!-- Posts -->
+     <!-- Posts -->
     <section class="featured-articles section section-header-offset">
-    <div class="text-dark text-left mt-3">
+    <div class="container text-dark mx-5 px-5">
         <h1><?php echo $pagetit; ?></h1>
-        <form action = "<?php echo site_url('posts/skeyword/');?>" method="post">
-          <div class="input-group">
-            <input type="text" name="title" placeholder="Search..." class=" bg-light border border-secondary form-control">  
-            <button class="btn bg-light border-start-0 border border-secondary" type="submit"> <i class="ri-search-line"></i></button>
-          </div>
-        </form>
     </div>
 
         <div class="featured-articles-container container d-grid">
@@ -56,24 +40,27 @@
                 <?php foreach ($posts as $post):?>
                     <div class="trending-news-box">
                         <div class="trending-news-img-box">
-                            <a class="trending-number place-items-center" href="<?php echo base_url('categories/postsbycat/'); ?><?php echo $post['cat_id']; ?>"> <?php echo $post['catname']?>
-                            <a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>">
+                           
+                            <a class="btn post-user-image"
+                            href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>">
                             <?php if($post['profile_picture']!='noimage.jpg'):?>
                             <img src="<?php echo base_url('assets/images/profile_picture/' . $post['profile_picture']);?>" width= "80" height="80" class="rounded rounded-circle">
                             <?php else:?>
-                            <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "100" height="100" class="rounded rounded-circle">
-                            <?php endif;?></a>
+                            <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "80" height="80" class="rounded rounded-circle">
+                            <?php endif;?>
+                            <?php echo $post['name'];?></a>
+
                         </div>
 
                         <div class="trending-news-data">
 
                             <div class="article-data">
-                                <span><?php echo $post['created_at'];?></span>
+                                <a href="<?php echo base_url('categories/postsbycat/'.$post['cat_id']); ?>">Posted on <?php echo $post['catname']?></a> 
                                 <span class="article-data-spacer"></span>
-                                <span><a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $post['user_id']; ?>"><?php echo $post['name'];?></a></span>
+                                <span><?php echo substr($post['created_at'], 0, 10);?></span>
                             </div>
 
-                            <a href="<?php echo base_url('post/'.$post['id']);?>"><h3 class="title article-title"><?php echo $post['title'];?></h3></a>
+                            <a href="<?php echo base_url('post/'.$post['id']);?>" style="text-align:center"><h3 class="title article-title"><?php echo mb_strimwidth($post['title'], 0, 15, '...');?></h3></a>
 
                             <?php if(isset($_SESSION['user'])):?>
                                 <div class="d-flex mb-3">
@@ -102,12 +89,14 @@
 
             </div>
 
-            <div class="sidebar d-grid">
+            <div class="sidebar">
 
                 <h3 class="title featured-content-title">Top Posts</h3>
 
                 <?php $i = 0; foreach ($pops as $pop):?>
-                    <a href="<?php echo base_url('post/'.$pop['id']);?>"><h3 class="title article-title"> <?php echo $pop['title'];?></h3></a>
+                    <div class='top-links'>
+                        <a href="<?php echo base_url('post/'.$pop['id']);?>"> <?php echo $i+1,'. ',$pop['title'];?></a>
+                    </div>
                     <?php if (++$i == 10) break;?>
                 <?php endforeach;?>
 

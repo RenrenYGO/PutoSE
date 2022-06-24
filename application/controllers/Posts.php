@@ -12,34 +12,47 @@ class Posts extends CI_Controller {
 
     public function skeyword(){
         $key = $this->input->post('title');
+
+        $sess_user = $this->session->userdata('user');
+        if(isset($sess_user) && $sess_user!=null)
+            $data['user'] = $this->profile_model->get_profile();
+            
         $data['pagetit'] = 'Searched: '.$key;
         $data['posts'] = $this->posts_model->get_posts_by_search($key);
         $data['pops'] = $this->posts_model->get_posts_by_popularity();
 
-        $this->load->view('templates/header');
-        $this->load->view('pages/dashboard', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/dashboard');
         $this->load->view('templates/footer');
     }
     
     public function view($id){
         
+        $sess_user = $this->session->userdata('user');
+        if(isset($sess_user) && $sess_user!=null)
+            $data['user'] = $this->profile_model->get_profile();
+
         $data['post'] = $this->posts_model->get_specific_post($id);
         $data['replies'] = $this->replies_model->get_replies($id);
 
-        $this->load->view('templates/header');
-        $this->load->view('pages/showpost', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/showpost');
         $this->load->view('templates/footer');
     }
 
     public function create(){
+        $sess_user = $this->session->userdata('user');
+        if(isset($sess_user) && $sess_user!=null)
+            $data['user'] = $this->profile_model->get_profile();
+
         $data['cats'] = $this->category_model->get_cats();
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('body', 'Body', 'required');
 
         if($this->form_validation->run() === false){
-            $this->load->view('templates/header');
-            $this->load->view('pages/create_post',$data);
+            $this->load->view('templates/header', $data);
+            $this->load->view('pages/create_post');
             $this->load->view('templates/footer');
         }
         else{
@@ -56,6 +69,10 @@ class Posts extends CI_Controller {
     }
 
     public function edit($id){
+        $sess_user = $this->session->userdata('user');
+        if(isset($sess_user) && $sess_user!=null)
+            $data['user'] = $this->profile_model->get_profile();
+
         $data['post'] = $this->posts_model->get_specific_post($id);
 
         if(empty($data['post'])){
@@ -71,8 +88,8 @@ class Posts extends CI_Controller {
         $data['user'] = $this->user;
         
 
-        $this->load->view('templates/header');
-        $this->load->view('pages/edit_post', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/edit_post');
         $this->load->view('templates/footer');
     }
 

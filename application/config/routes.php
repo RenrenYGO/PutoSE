@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route["edit_profile/delete_photo/(:any)"] = "edit_profile/delete_photo/$1";
 $route["post/(:any)"] = "posts/view/$1";
 $route["login"]= "pages/dashboard/login";
 $route["forgot_pass"]= "forgot_password/verify";

@@ -1,34 +1,110 @@
+<script>
+    function changeAction(link) {
+        console.log(link);
+        document.getElementById('Modal').action = '<?php echo base_url('edit_profile/');?>' + link;
+        if(link == 'edit_cover'){
+            document.getElementById('picture').name = 'cover_photo';
+        }else{
+            document.getElementById('picture').name = 'profile_picture';
+        }
+        
+    }
+
+    function deletePic(link){
+        window.location.href = '<?php echo base_url('edit_profile/delete_photo/')?>' + link
+    }
+</script>
 
 <div class = "profile">
-    <?php echo form_open_multipart('edit_profile/cover_edit');?>
         <div class="m-3 cover-photo-container">
             <?php if($user['cover_photo']!='noimage.jpg'):?>
                 <img src="<?php echo base_url('assets/images/cover_photo/' . $user['cover_photo']);?>" class= "cover-photo">
             <?php else:?>
                 <img src="<?php echo base_url('assets/images/featured/defaultcover1.jpg');?>" class= "cover-photo" >
             <?php endif;?>
-        </div>
 
-        <div class="label" title="Add Cover Photo">
-        <?php $sess_user = $this->session->userdata('user');
-            if(isset($sess_user) && $sess_user!=null && $sess_user['id'] == $user['id']):?>
-                <input type="file" name="cover_photo"></input>
-                <button type="submit" class="btn btn-custom">Submit</button>
-            <?php endif;?>
+            <?php $sess_user = $this->session->userdata('user');
+                if(isset($sess_user) && $sess_user!=null && $sess_user['id'] == $user['id']):?>
+                <div class="dropdown edit-cover">
+                    <div class="btn btn-danger cancel dropbtn">Edit Cover Photo</div>
+
+                    <div class="dropdown-content">
+                        <button type="button"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#uploadModal" 
+                            style="padding:1rem; width:100%;"
+                            onclick="changeAction('edit_cover')">
+                            Upload
+                        </button>
+
+                        <button type="button"
+                            style="padding:1rem; width:100%;"
+                            onclick="deletePic('cover_photo')">
+                            Remove
+                        </button>
+                    </div>
+                    
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="uploadModal"  aria-labelledby="uploadModal" >
+                    <div class="modal-dialog modal-dialog-centered text-dark">
+                        <form id="Modal" method="post" name="Modal" enctype='multipart/form-data' >
+                            <div class="modal-content">
+                                <div class="modal-header justify-content-center">
+                                <h4 class="modal-title" id="InputModalTitleLabel">Upload Photo</h4>
+                                </div> 
+                                <div class="modal-body text-color">
+                                <input id='picture' type="file" ></input>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-custom cancel" data-bs-dismiss="modal" >Close</button>
+                                    <button type="submit" class="btn btn-custom" >Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            <?php endif;?>   
         </div>
-    </form>
+    
 
     <div class="trending-profile-img-box">
         <?php if($user['profile_picture']!='noimage.jpg'):?>
-        <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "80" height="80" class="rounded rounded-circle">
+        <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "120" height="120"  class="rounded-circle">
         <?php else:?>
-        <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "100" height="100" class="rounded rounded-circle">
+        <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "120" height="120" class="rounded-circle">
         <?php endif;?>
         <div class="text-dark text-center mt-3">
-            <h3><?php echo $user['name'];?></h3>
+            <span><?php echo $user['name'];?></span>
         </div>
+       
+        
+        <?php $sess_user = $this->session->userdata('user');
+        if(isset($sess_user) && $sess_user!=null && $sess_user['id'] == $user['id']):?>
+            <div class="dropdown edit-profile-photo">
+                <div class="btn rounded-circle btn-danger cancel dropbtn"><i class="ri-camera-fill"></i></div>
+
+                <div class="dropdown-content">
+                    <button type="button" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#uploadModal" 
+                        style="padding:1rem; width:100%" 
+                        onclick="changeAction('edit_profile_photo')">
+                        Upload
+                    </button>
+
+                    <button type="button"
+                        style="padding:1rem; width:100%;"
+                        onclick="deletePic('profile_picture')">
+                        Remove
+                    </button>
+                </div>
+            </div>
+        <?php endif;?>
     </div>
-    
+
     <div class="main">
 
         <div class="row">
@@ -39,7 +115,7 @@
                     <div class="mb-3">
                         <?php $sess_user = $this->session->userdata('user');
                             if(isset($sess_user) && $sess_user!=null && $sess_user['id'] == $user['id']):?>
-                                <a type="submit" id="edit" href="<?php echo base_url('pages/dashboard/edit_profile');?>" class="btn btn-custom" name="edit" >EDIT PROFILE</a>
+                                <a type="submit" id="edit" href="<?php echo base_url('edit_profile/index');?>" class="btn btn-custom" name="edit" >EDIT PROFILE</a>
                             <?php endif;?>
                     </div>
                 </div>
@@ -50,19 +126,20 @@
                 <?php foreach ($posts as $post):?>
                     <div class="trending-news-box mb-5 ">
                         <div class="trending-news-img-box">
-                            <a class="trending-number place-items-center" href="<?php echo base_url('categories/postsbycat/'); ?><?php echo $post['cat_id']; ?>"> <?php echo $post['catname']?></a>
+                            <a class="btn post-user-image" >
                             <?php if($user['profile_picture']!='noimage.jpg'):?>
                             <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "80" height="80" class="rounded rounded-circle">
                             <?php else:?>
-                            <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "100" height="100" class="rounded rounded-circle">
+                            <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "80" height="80" class="rounded rounded-circle">
                             <?php endif;?>
+                            <?php echo $post['name'];?></a>
                         </div>
 
                         <div class="trending-news-data">
                             <div class="article-data">
-                                <span><?php echo $post['created_at'];?></span>
+                                <a href="<?php echo base_url('categories/postsbycat/'.$post['cat_id']); ?>">Posted on <?php echo $post['catname']?></a> 
                                 <span class="article-data-spacer"></span>
-                                <span><?php echo $post['name'];?></span>
+                                <span><?php echo substr($post['created_at'], 0, 10);?></span>
                             </div>
 
                             <h3 class="title article-title">
@@ -100,3 +177,4 @@
         </div>
     </div>
 </div>
+
