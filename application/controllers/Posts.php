@@ -12,12 +12,17 @@ class Posts extends CI_Controller {
 
     public function skeyword(){
         $key = $this->input->post('title');
+
+        $sess_user = $this->session->userdata('user');
+        if(isset($sess_user) && $sess_user!=null)
+            $data['user'] = $this->profile_model->get_profile();
+            
         $data['pagetit'] = 'Searched: '.$key;
         $data['posts'] = $this->posts_model->get_posts_by_search($key);
         $data['pops'] = $this->posts_model->get_posts_by_popularity();
 
-        $this->load->view('templates/header');
-        $this->load->view('pages/dashboard', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/dashboard');
         $this->load->view('templates/footer');
     }
     
