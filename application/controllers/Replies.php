@@ -32,4 +32,9 @@ class Replies extends CI_Controller{
 		$data['replies'] = $this->replies_model->get_replies($id);
 		redirect('post/'.$post_id);
 	}
+
+	public function delete_reply($id){
+		$this->replies_model->reply_delete($id);
+		redirect('dashboard');
+	}
 }

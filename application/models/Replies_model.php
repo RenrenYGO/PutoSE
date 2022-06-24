@@ -107,4 +107,11 @@ class Replies_model extends CI_Model{
 			return false;
 		}
 	}
+
+	public function reply_delete($id){
+		$this->db->where('id', $id);
+		$this->db->delete('replies');
+		
+		return true;
+	}
 }

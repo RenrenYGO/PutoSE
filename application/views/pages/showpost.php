@@ -89,12 +89,20 @@
 
                             <div class="trending-news-data">
 
+                                <div class="replyheader" style="float:right">
+                                    <?php if(isset($_SESSION['user']) && $this->session->userdata('user')['id'] == $reply['user_id']):?>
+                                        <?php echo form_open('replies/delete_reply/'.$reply['id']);?>
+                                            <input type="submit" value="Delete" class="btn btn-danger">
+                                        </form>
+                                    <?php endif;?>
+                                </div>
+
                                 <div class="article-data">
                                     <span><?php echo $reply['created_at'];?></span>
                                     <span class="article-data-spacer"></span>
                                     <span><a class="btn mb-3 px-2" href="<?php echo base_url('profile/viewprofile/'); ?><?php echo $reply['user_id']; ?>"><?php echo $reply['name'];?></a></span>
                                 </div>
-
+                                
                                 <h3 class="title article-title"><?php echo $reply['content'];?></h3>
 
                                 <?php if(isset($_SESSION['user'])):?>
