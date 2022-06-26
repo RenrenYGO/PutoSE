@@ -95,7 +95,7 @@ class Posts extends CI_Controller {
 
     public function update(){
         $this->form_validation->set_rules('title', 'Title', 'required');
-        $this->form_validation->set_rules('body', 'Body', required);
+        $this->form_validation->set_rules('body', 'Body', 'required');
 
         if($this->form_validation->run() === TRUE){
             $data = $this->input->post();

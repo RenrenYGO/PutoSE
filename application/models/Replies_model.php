@@ -97,6 +97,23 @@ class Replies_model extends CI_Model{
 		}
 	}
 
+	public function row_reply($data){
+		$this->db->select('replies.*, id, post_id, content');
+		$query = $this->db->where('id', $data);
+		$query = $this->db->get('replies');
+		
+		return $query->row_array();
+	}
+
+	public function edit_reply($data){
+		$reply = array(
+			'content' => $data['body']
+		);
+        $this->db->where('id', $data['id']);
+        return $this->db->update('replies', $reply);
+	}
+
+
 	public function get_reacts($id){
 		$this->db->where('id',$id);
 		$query = $this->db->get('replies');

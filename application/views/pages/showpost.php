@@ -96,7 +96,11 @@
                                         </form>
                                     <?php endif;?>
                                 </div>
-
+                                <div class="replyheader" style="float:right">
+                                <?php if(isset($_SESSION['user']) && $this->session->userdata('user')['id'] == $reply['user_id']):?>
+                                    <a class="btn btn-custom" id="edit" href="<?php echo base_url('replies/edit/'.$reply['id']);?>">Edit</a>
+                                    <?php endif;?>
+                                </div>
                                 <div class="article-data">
                                     <span><?php echo $reply['created_at'];?></span>
                                     <span class="article-data-spacer"></span>

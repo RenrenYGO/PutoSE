@@ -25,6 +25,29 @@ class Replies extends CI_Controller{
 		$data['replies'] = $this->replies_model->get_replies($id);
 		redirect('post/'.$post_id);
 	}
+
+	public function update(){
+		$this->form_validation->set_rules('body', 'Body', 'required');
+		if($this->form_validation->run() === TRUE){
+        $data = $this->input->post();
+		$this->replies_model->edit_reply($data);	
+		redirect('dashboard');
+	 }
+	}
+
+	public function edit($id){
+		$sess_user = $this->session->userdata('user');
+        if(isset($sess_user) && $sess_user!=null)
+            $data['user'] = $this->profile_model->get_profile();
+
+
+   
+		$data['data'] = $this->replies_model->row_reply($id);
+		$this->load->view('templates/header', $data);
+        $this->load->view('pages/edit_reply', $data);
+        $this->load->view('templates/footer');
+    }
+
 	
 	public function downvoteR($id,$post_id){
 		$this->replies_model->downvote_reply($id);
