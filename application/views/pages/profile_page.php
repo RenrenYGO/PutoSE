@@ -68,41 +68,34 @@
                 
             <?php endif;?>   
         </div>
-    
+        
 
     <div class="trending-profile-img-box">
-        <?php if($user['profile_picture']!='noimage.jpg'):?>
-        <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "120" height="120"  class="rounded-circle">
-        <?php else:?>
-        <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "120" height="120" class="rounded-circle">
-        <?php endif;?>
+        <div class = "profile-photo">
+            <!-- Profile Picture -->
+            <?php if($user['profile_picture']!='noimage.jpg'):?>
+            <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "120" height="120"  class="rounded-circle">
+            <?php else:?>
+            <img src="<?php echo base_url('assets/images/featured/PROFILEPICPLACEHOLDER.png');?>" width= "120" height="120" class="rounded-circle">
+            <?php endif;?>
+            
+            <!-- Upload icon -->
+            <?php $sess_user = $this->session->userdata('user');
+            if(isset($sess_user) && $sess_user!=null && $sess_user['id'] == $user['id']):?>
+                <button class="btn rounded-circle btn-danger cancel dropbtn icon"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#uploadModal"
+                    onclick="changeAction('edit_profile_photo')">
+                    <i class="ri-camera-fill"></i>
+                </button>
+            <?php endif;?>
+            
+        </div>
         <div class="text-dark text-center mt-3">
             <span><?php echo $user['name'];?></span>
         </div>
        
-        
-        <?php $sess_user = $this->session->userdata('user');
-        if(isset($sess_user) && $sess_user!=null && $sess_user['id'] == $user['id']):?>
-            <div class="dropdown edit-profile-photo">
-                <div class="btn rounded-circle btn-danger cancel dropbtn"><i class="ri-camera-fill"></i></div>
-
-                <div class="dropdown-content">
-                    <button type="button" 
-                        data-bs-toggle="modal" 
-                        data-bs-target="#uploadModal" 
-                        style="padding:1rem; width:100%" 
-                        onclick="changeAction('edit_profile_photo')">
-                        Upload
-                    </button>
-
-                    <button type="button"
-                        style="padding:1rem; width:100%;"
-                        onclick="deletePic('profile_picture')">
-                        Remove
-                    </button>
-                </div>
-            </div>
-        <?php endif;?>
+      
     </div>
 
     <div class="main">

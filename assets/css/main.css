@@ -44,6 +44,7 @@ body {
     letter-spacing: 1px;
     transition: background-color .25s, color .25s;
     overflow-x:hidden;
+    padding-right: 0 !important 
 }
 
 
@@ -330,16 +331,22 @@ html {
 }
 
 .login {
-    max-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100px;
-    width: 100px;
-    margin: 0 auto;
-    -webkit-transform: translate3d(0, -70%, 0);
-    -moz-transform: translate3d(0, -70%, 0);
-    -o-transform: translate3d(0, -70%, 0);
-    -ms-transform: translate3d(0, -70%, 0);
-    transform: translate3d(0, -90%, 0);
+    width: 100%;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: -2.7em;
+    margin-bottom: 3em;
     color: white;
+}
+
+.login img{
+    margin: 0 auto;
+    height: 120px;
+    width: 120px;
 }
 
 .error{
@@ -360,7 +367,7 @@ html {
 }
 
 #editor1 {
-    height: 30rem;
+    height: 25rem;
 }
 
 label {
@@ -395,7 +402,9 @@ label {
 .form-control {
     text-align: left;
     border-radius: 15px;
-    padding: 1rem;
+    padding: .5rem;
+    font-size: 1.5rem;
+    padding-left: 1rem;
 }
 
 
@@ -441,14 +450,16 @@ label {
 .PutoLogo {
     float: right;
     position: relative;
-    top: -30px;
-    left: -65px;
+    
     height: 100px;
     width: 100px;
     color: white;
 }
 
 .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 150%;
     color: #628EFF;
     text-align: center;
@@ -554,7 +565,18 @@ label {
 }
 
 .profile-photo{
-    width:15rem
+    width: 120px;
+    height: 120px;
+    position:relative;
+}
+
+.icon{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .edit-profile-photo {
