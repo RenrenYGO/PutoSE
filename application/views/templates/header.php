@@ -35,10 +35,8 @@
 
         <nav class="navbar container">
            
-            <div class= 'd-flex'>
-                <a href="<?php echo base_url('dashboard')?>">              
-            <a href="<?php echo base_url('dashboard')?>">              
-                <a href="<?php echo base_url('dashboard')?>">              
+            <div class= 'd-flex align-items-center'>
+                <a href="<?php echo base_url('dashboard')?>">                         
                     <h2 class="logo mt-2"><b>PUTO</b></h2>
                     <div class="logo-image">
                         <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png') ?>" width="40" height="50" >
@@ -46,7 +44,7 @@
                 </a>
                 <form action = "<?php echo site_url('posts/skeyword/');?>" method="post">
                     <div class="input-group">
-                        <input type="text" name="title" placeholder="&#xf002 Search..." style="font-family:FontAwesome"  class=" bg-light border border-secondary form-control">
+                        <input type="text" name="title" placeholder="&#xf002 Search..." style="font-family:FontAwesome" id="search" class="bg-light border border-secondary form-control">
                         
                     </div>
                 </form>

@@ -4,7 +4,7 @@
         <form method="post" class="box signup" action="<?php echo base_url('registration/register'); ?>">
 
             <div class="login">
-                <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png')?>" width="138" height="130" >
+                <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png')?>" >
                 Sign Up
             </div>
             
@@ -28,7 +28,7 @@
 
                     <?php echo validation_errors(); ?>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-custom" name="submit" >Submit</button>
+                        <button type="submit" class="btn btn-custom px-5 my-2" name="submit" >Submit</button>
                     </div>
 
                     <div class="mb-3">
@@ -43,8 +43,8 @@
                 <a href="#" class="facebook"><i class="bi bi-facebook mx-5"></i></a>
             </div>
 
-            <div class="row justify-content-left mt-3">
-               <p>Already have an account?<a href="<?php echo base_url('login'); ?>"><u>LOGIN</u></a></p>
+            <div class="mt-3">
+               <p class = "d-flex flex-column justify-content-center">Already have an account?<a style="margin:0 auto;" href="<?php echo base_url('login'); ?>"><u>LOGIN</u></a></p>
             </div>
 
         </form>
