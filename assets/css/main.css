@@ -44,6 +44,7 @@ body {
     letter-spacing: 1px;
     transition: background-color .25s, color .25s;
     overflow-x:hidden;
+    padding-right: 0 !important 
 }
 
 
@@ -554,7 +555,18 @@ label {
 }
 
 .profile-photo{
-    width:15rem
+    width: 120px;
+    height: 120px;
+    position:relative;
+}
+
+.icon{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .edit-profile-photo {
