@@ -38,7 +38,7 @@
                 <?php endif;?>
 
                 <?php foreach ($posts as $post):?>
-                    <div class="trending-news-box">
+                    <button class="trending-news-box" onclick="viewPost(<?php echo $post['id']?>)">
                         <div class="trending-news-img-box">
                            
                             <a class="btn post-user-image"
@@ -60,31 +60,29 @@
                                 <span><?php echo substr($post['created_at'], 0, 10);?></span>
                             </div>
 
-                            <a href="<?php echo base_url('post/'.$post['id']);?>" style="text-align:center"><h3 class="title article-title"><?php echo mb_strimwidth($post['title'], 0, 15, '...');?></h3></a>
+                            <h3 class="title article-title"><?php echo mb_strimwidth($post['title'], 0, 15, '...');?></h3>
 
                             <?php if(isset($_SESSION['user'])):?>
                                 <div class="d-flex mb-3">
-                                    <?php echo form_open('/posts/upvote/'.$post['id']); ?>
+                                    
                                         <div class="input-group ms-2 me-1 pe-2 ps-1">
-                                            <input name="upvote" type="hidden" value="<?php echo $post['id']?>">
-                                                <button class="btn bg-success" type="submit">
-                                                <?php echo $post['upvote']; ?></button>
+                                            <a href="<?php echo base_url('/posts/upvote/'.$post['id']); ?>"class="btn bg-success" type="submit">
+                                            <?php echo $post['upvote']; ?></a>
                                         </div>
-                                    </form>
+                 
 
-                                    <?php echo form_open('/posts/downvote/'.$post['id']); ?>
+                                   
                                         <div class="input-group me-3 pe-2 ps-1">
-                                            <input name="downvote" type="hidden" value="<?php echo $post['id']?>">
-                                            <button class="btn bg-danger" type="submit">
+                                            <a href="<?php echo base_url('/posts/downvote/'.$post['id']); ?>"class="btn bg-danger">
                                                 <?php echo $post['downvote']; ?>
-                                            </button>
+                                            </a>
                                         </div>
-                                    </form>
+                                 
                                 </div>
                             <?php endif; ?>
 
                         </div>
-                    </div>
+                    </button>
                 <?php endforeach;?>
 
             </div>
@@ -105,4 +103,3 @@
         </div>
 
     </section>
-

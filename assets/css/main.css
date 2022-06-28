@@ -535,8 +535,8 @@ label {
 
 /* Links inside the dropdown */
 .dropdown-content button {
-    
-    padding: 12px 16px;
+    padding:1rem; 
+    width:100%;
     text-decoration: none;
     display: block;
 }
@@ -802,6 +802,10 @@ label {
     margin-bottom: 1rem;
 }
 
+.trending-news-box a:hover{
+    text-decoration: underline;
+}
+
 .article-data-spacer {
     width: .5rem;
     height: .5rem;
@@ -915,6 +919,11 @@ label {
     display:flex; 
     flex-direction:column;  
     word-wrap: break-word;  
+    font-weight: bold;
+}
+
+.post-user-image:hover{
+    text-decoration: underline;
 }
 
 .trending-news-data .article-title {

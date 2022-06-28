@@ -88,3 +88,23 @@ const swiper = new Swiper(".swiper", {
         }
     }   
 });
+
+// For viewing specific post
+function viewPost(id){
+    window.location.href = "post/" + id;
+}
+
+function changeAction(link) {
+    console.log(link);
+    document.getElementById('Modal').action = 'edit_profile/' + link;
+    if(link == 'edit_cover'){
+        document.getElementById('picture').name = 'cover_photo';
+    }else{
+        document.getElementById('picture').name = 'profile_picture';
+    }
+    
+}
+
+function deletePic(link){
+    window.location.href = 'edit_profile/delete_photo/' + link;
+}
