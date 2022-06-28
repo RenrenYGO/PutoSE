@@ -109,13 +109,31 @@ class Posts extends CI_Controller {
         redirect('dashboard');
     }
 
+    // Upvote for dashboard post
     public function upvote($id){
         $this->posts_model->upvote_post($id);
         redirect('dashboard');
     }
     
+    // Downvote for dashboard post
     public function downvote($id){
         $this->posts_model->downvote_post($id);
         redirect('dashboard');
     }
+
+    // Upvote for specific post
+    public function upvoteR($id){
+		$this->posts_model->upvote_post($id);
+		$data['post'] = $this->posts_model->get_specific_post($_id);
+		$data['replies'] = $this->replies_model->get_replies($id);
+		redirect('post/'.$id);
+	}
+
+    // Downvote for specific post
+    public function downvoteR($id){
+		$this->posts_model->downvote_post($id);
+		$data['post'] = $this->posts_model->get_specific_post($_id);
+		$data['replies'] = $this->replies_model->get_replies($id);
+		redirect('post/'.$id);
+	}
 }

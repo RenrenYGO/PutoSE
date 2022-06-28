@@ -56,8 +56,8 @@ class Replies extends CI_Controller{
 		redirect('post/'.$post_id);
 	}
 
-	public function delete_reply($id){
+	public function delete_reply($id, $post_id){
 		$this->replies_model->reply_delete($id);
-		redirect('dashboard');
+		redirect('post/'.$post_id);
 	}
 }
