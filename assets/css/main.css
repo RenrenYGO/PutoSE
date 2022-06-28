@@ -744,7 +744,7 @@ label {
     overflow: hidden;
     justify-content: flex-end;
     align-items: flex-end;
-    width: 100%;
+
 }
 
 .fancy-border::before {
