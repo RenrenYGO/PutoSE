@@ -535,8 +535,8 @@ label {
 
 /* Links inside the dropdown */
 .dropdown-content button {
-    
-    padding: 12px 16px;
+    padding:1rem; 
+    width:100%;
     text-decoration: none;
     display: block;
 }
@@ -609,13 +609,16 @@ label {
     min-height: 100%;
     margin: 0 auto;
     margin-top: 4em;
-    padding: 2rem 1.5rem;
+    padding: 2rem auto;
     justify-content: center;
     align-items: center;
 }
 
 .castoria-box {
-    padding: 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
     border-radius: 15px;
     box-shadow: 2px 5px;
     width: 55%;
@@ -630,7 +633,8 @@ label {
     font-size: 2rem;
     font-weight: 600;
     margin: 0 auto;
-    color: #0e1111;
+    
+
 }
 
 .castoria-img-box {
@@ -639,7 +643,6 @@ label {
     font-weight: 600;
     flex-wrap: wrap;
     float: left;
-    width: 100%;
     display: flex;
     
     justify-content: space-between;
@@ -649,18 +652,38 @@ label {
 .postheader{
     align-items: center;
     display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+   
+}
+.postfooter a{
+    color: black;
+}
+.postfooter .btn{
+    padding: .7rem 1rem;
 }
 
 .content{
+    width: 100%;
     font-weight: 100; 
     font-size: 1.5rem;
     overflow-wrap: break-word;
     white-space: pre-wrap;
 }
 
+.postfooter{
+    font-weight: 100; 
+    font-size: 1.5rem;
+}
+
 .comment {
     width: 55%;
     margin: 2em auto;
+}
+
+.replyheader{
+    font-size: 1.5rem;
+    gap: 1rem;
 }
 
 /* for Edit Profile */
@@ -721,6 +744,7 @@ label {
     overflow: hidden;
     justify-content: flex-end;
     align-items: flex-end;
+
 }
 
 .fancy-border::before {
@@ -800,6 +824,10 @@ label {
     gap: var(--gap);
     font-size: var(--font-size-xsm);
     margin-bottom: 1rem;
+}
+
+.trending-news-box a:hover{
+    text-decoration: underline;
 }
 
 .article-data-spacer {
@@ -915,6 +943,11 @@ label {
     display:flex; 
     flex-direction:column;  
     word-wrap: break-word;  
+    font-weight: bold;
+}
+
+.post-user-image:hover{
+    text-decoration: underline;
 }
 
 .trending-news-data .article-title {
@@ -1225,6 +1258,7 @@ label {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 1rem;
     }
 
     .newsletter-description {
