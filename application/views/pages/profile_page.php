@@ -68,7 +68,6 @@
                 
             <?php endif;?>   
         </div>
-        
 
     <div class="trending-profile-img-box">
         <div class = "profile-photo">
@@ -94,7 +93,6 @@
         <div class="text-dark text-center mt-3">
             <span><?php echo $user['name'];?></span>
         </div>
-       
       
     </div>
 

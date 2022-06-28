@@ -42,6 +42,12 @@
                         <img src="<?php echo base_url('/assets/images/featured/PUTOLOGO.png') ?>" width="40" height="50" >
                     </div>
                 </a>
+                <form action = "<?php echo site_url('posts/skeyword/');?>" method="post">
+                    <div class="input-group">
+                        <input type="text" name="title" placeholder="&#xf002 Search..." style="font-family:FontAwesome" id="search" class="bg-light border border-secondary form-control">
+                        
+                    </div>
+                </form>
             </div>
 
 
@@ -79,6 +85,7 @@
                     <!-- Dropdowm Menu -->
                     <ul class="dropdown-menu dropdown-menu-end  mx-3 my-2">
                         <li><a class="dropdown-item d-flex align-items-center" href="<?php echo base_url('profile');?>" >
+                        
                             <div class="logo-image mt-2" >
                                 <?php if($user['profile_picture']!='noimage.jpg'):?>
                                 <img src="<?php echo base_url('assets/images/profile_picture/' . $user['profile_picture']);?>" width= "40" height="40" style="float:left;" class="rounded rounded-circle">

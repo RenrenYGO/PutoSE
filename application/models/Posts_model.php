@@ -66,6 +66,7 @@ class Posts_model extends CI_Model{
 
     public function get_posts_by_search($key){
 		$this->db->like('title',$key);
+        $this->db->or_like('content',$key);
 		$this->db->select('posts.*, user.name, user.profile_picture, categories.name AS catname');
         $this->db->join('user', 'user.id = posts.user_id');
         $this->db->order_by('created_at', 'DESC');

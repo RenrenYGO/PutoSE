@@ -1,41 +1,51 @@
 
      <!-- Posts -->
     <section class="featured-articles section section-header-offset">
-    <div class="container text-dark mx-5 px-5">
-        <h1><?php echo $pagetit; ?></h1>
-    </div>
 
         <div class="featured-articles-container container d-grid">
 
             <div class="featured-content posts d-grid">
+
+                <div class="d-flex">
+                <div class="container text-dark mx-5 px-5">
+                    <h1><?php echo $pagetit; ?></h1>
+                </div>
+                <div class="input-group">
+                    <form action = "<?php echo site_url('posts/skeyword/');?>" method="post">
+                        <input type="text" name="title" placeholder="&#xf002 Search..." style="font-family:FontAwesome" id="search" class="bg-light form-control">
+                    </form>
+                </div>
                 
-                <?php if(isset($_SESSION['user']['name'])):?>
-                    <button class="btn sign-up-btn fancy-border screen-sm-hidden " >
-                        <a class="justify-content-center"href="<?php echo base_url('posts/create');?>" >
-                            <span>Create Post + </span>
-                        </a>
-                    </button>
-                <?php else:?>
-                    <button data-bs-toggle="modal" data-bs-target="#InputModal" class="btn sign-up-btn fancy-border screen-sm-hidden" >
-                    <span>Create Post + </span>
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="InputModal" tabindex="-1" aria-labelledby="InputModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered text-color">
-                            <div class="modal-content">
-                                <div class="modal-header justify-content-center">
-                                <h5 class="modal-title" id="InputModalTitleLabel">Create Post</h5>
-                                </div> 
-                                <div class="modal-body">
-                                <h2 class="title footer-title">Please sign in first or create an account!</h2>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <div class="container text-dark mx-5 px-5">
+                    <?php if(isset($_SESSION['user']['name'])):?>
+                        <button class="btn sign-up-btn fancy-border screen-sm-hidden " >
+                            <a class="justify-content-center"href="<?php echo base_url('posts/create');?>" >
+                                <span>Create Post + </span>
+                            </a>
+                        </button>
+                    <?php else:?>
+                        <button data-bs-toggle="modal" data-bs-target="#InputModal" class="btn sign-up-btn fancy-border screen-sm-hidden" >
+                        <span>Create Post + </span>
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="InputModal" tabindex="-1" aria-labelledby="InputModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered text-color">
+                                <div class="modal-content">
+                                    <div class="modal-header justify-content-center">
+                                    <h5 class="modal-title" id="InputModalTitleLabel">Create Post</h5>
+                                    </div> 
+                                    <div class="modal-body">
+                                    <h2 class="title footer-title">Please sign in first or create an account!</h2>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endif;?>
+                    <?php endif;?>
+                </div>
+                </div>
 
                 <?php foreach ($posts as $post):?>
                     <div class="trending-news-box">
