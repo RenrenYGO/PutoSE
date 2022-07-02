@@ -72,7 +72,7 @@
                     <i class="ri-close-line close-menu-icon"></i>
                 </button>
 
-                    <button class="btn place-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button title="Menu" class="btn place-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="ri-menu-3-line open-menu-icon"></i>
                     </button>
                     

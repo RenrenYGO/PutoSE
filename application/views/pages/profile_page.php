@@ -65,7 +65,7 @@
             <!-- Upload icon -->
             <?php $sess_user = $this->session->userdata('user');
             if(isset($sess_user) && $sess_user!=null && $sess_user['id'] == $user['id']):?>
-                <button class="btn rounded-circle btn-danger cancel dropbtn icon"
+                <button title="Upload Picture" class="btn rounded-circle btn-danger cancel dropbtn icon"
                     data-bs-toggle="modal" 
                     data-bs-target="#uploadModal"
                     onclick="changeAction('edit_profile_photo')">
@@ -124,21 +124,18 @@
 
                             <?php if(isset($_SESSION['user'])):?>
                                 <div class="d-flex mb-3">
-                                    <?php echo form_open('/posts/upvote/'.$post['id']); ?>
+                                 
                                         <div class="input-group ms-2 me-1 pe-2 ps-1">
-                                            <a href="<?php echo base_url('/posts/upvote/'.$post['id']); ?>"class="btn bg-success" type="submit">
+                                            <a title="Upvote" href="<?php echo base_url('/posts/upvote/'.$post['id']); ?>"class="btn bg-success" type="submit">
                                                 <?php echo $post['upvote']; ?>
                                             </a>
-                                        </div>
-                                    </form>
-
-                                    <?php echo form_open('/posts/downvote/'.$post['id']); ?>
+                                            
                                         <div class="input-group me-3 pe-2 ps-1">
-                                            <a href="<?php echo base_url('/posts/downvote/'.$post['id']); ?>"class="btn bg-danger">
+                                            <a title="Downvote" href="<?php echo base_url('/posts/downvote/'.$post['id']); ?>"class="btn bg-danger">
                                                 <?php echo $post['downvote']; ?>
                                             </a>
                                         </div>
-                                    </form>
+                            
                                 </div>
                             <?php endif; ?>
 
