@@ -49,23 +49,16 @@
 
             <?php if(isset($_SESSION['user'])):?>
                 <div class="d-flex ">
-                
-                    <?php echo form_open('/posts/upvoteR/'.$post['id']); ?>
-                        <div class="input-group ms-2 me-1 pe-2 ps-1">
-                            <input name="upvote" type="hidden" value="<?php echo $post['id']?>">
-                                <button class="btn bg-success" type="submit">
-                                <?php echo $post['upvote']; ?></button>
-                        </div>
-                    </form>
+                    <div class="input-group ms-2 me-1 pe-2 ps-1">
+                        <a title="Upvote" href="<?php echo base_url('/posts/upvoteR/'.$post['id']); ?>"class="btn bg-success" >
+                        <?php echo $post['upvote']; ?></a>
+                    </div>
 
-                    <?php echo form_open('/posts/downvoteR/'.$post['id']); ?>
-                        <div class="input-group me-3 pe-2 ps-1">
-                            <input name="downvote" type="hidden" value="<?php echo $post['id']?>">
-                            <button class="btn bg-danger" type="submit">
-                                <?php echo $post['downvote']; ?>
-                            </button>
-                        </div>
-                    </form>
+                    <div class="input-group me-3 pe-2 ps-1">
+                        <a title="Downvote" href="<?php echo base_url('/posts/downvoteR/'.$post['id']); ?>"class="btn bg-danger">
+                            <?php echo $post['downvote']; ?>
+                        </a>
+                    </div>
                 </div>
             <?php endif; ?>
          </div>
@@ -106,9 +99,7 @@
                             </div>
 
                             <div class="trending-news-data">
-
-                                
-                                
+         
                                 <div class="article-data">
                                     <span><?php echo $reply['created_at'];?></span>           
                                 </div>
@@ -117,22 +108,16 @@
 
                                 <?php if(isset($_SESSION['user'])):?>
                                     <div class="d-flex mb-3">
-                                        <?php echo form_open('/replies/upvoteR/'.$reply['id']."/".$post['id']); ?>
-                                            <div class="input-group ms-1 me-1 pe-2 ps-1">
-                                                <input name="upvote" type="hidden" value="<?php echo $reply['id']?>">
-                                                <button class="btn bg-success" type="submit"> 
-                                                    <?php echo $reply['upvote']; ?>    
-                                                </button>
-                                            </div>
-                                        </form>
-                                    
-                                        <?php echo form_open('/replies/downvoteR/'.$reply['id']."/".$post['id']); ?>
-                                            <div class="input-group  pe-2 ps-1">
-                                                <input name="downvote" type="hidden" value="<?php echo $reply['id']?>">
-                                                <button class="btn bg-danger" type="submit">
-                                                <?php echo $reply['downvote']; ?></button>
-                                            </div>
-                                        </form>
+                                        <div class="input-group ms-2 me-1 pe-2 ps-1">
+                                            <a title="Upvote" href="<?php echo base_url('/replies/upvoteR/'.$reply['id']."/".$post['id']); ?>"class="btn bg-success" >
+                                            <?php echo $reply['upvote']; ?></a>
+                                        </div>
+
+                                        <div class="input-group me-3 pe-2 ps-1">
+                                            <a title="Downvote" href="<?php echo base_url('/replies/downvoteR/'.$reply['id']."/".$post['id']); ?>"class="btn bg-danger">
+                                                <?php echo $reply['downvote']; ?>
+                                            </a>
+                                        </div>
                                     </div>
                                 <?php endif; ?>
 

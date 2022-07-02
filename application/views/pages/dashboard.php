@@ -25,7 +25,7 @@
                             </a>
                         </button>
                     <?php else:?>
-                        <button data-bs-toggle="modal" data-bs-target="#InputModal" class="btn sign-up-btn fancy-border screen-sm-hidden" >
+                        <button data-bs-toggle="modal" data-bs-target="#InputModal" class="btn sign-up-btn fancy-border screen-sm-hidden" style="width:11em">
                         <span>Create Post + </span>
                         </button>
                         <!-- Modal -->
@@ -77,14 +77,14 @@
                                 <div class="d-flex mb-3">
                                     
                                         <div class="input-group ms-2 me-1 pe-2 ps-1">
-                                            <a href="<?php echo base_url('/posts/upvote/'.$post['id']); ?>"class="btn bg-success" type="submit">
+                                            <a title="Upvote" href="<?php echo base_url('/posts/upvote/'.$post['id']); ?>"class="btn bg-success" >
                                             <?php echo $post['upvote']; ?></a>
                                         </div>
                  
 
                                    
                                         <div class="input-group me-3 pe-2 ps-1">
-                                            <a href="<?php echo base_url('/posts/downvote/'.$post['id']); ?>"class="btn bg-danger">
+                                            <a title="Downvote" href="<?php echo base_url('/posts/downvote/'.$post['id']); ?>"class="btn bg-danger">
                                                 <?php echo $post['downvote']; ?>
                                             </a>
                                         </div>
