@@ -12,17 +12,33 @@ class Edit_Profile extends CI_Controller{
 
     public function index(){
         $data['user'] = $this->profile_model->get_profile();
+       
+        $this->form_validation->set_rules('name', 'Name', 'required|callback_check_username_exists');
+        $this->form_validation->set_rules('bio', 'Bio', 'required');
+        
+        if($this->form_validation->run() === false){
+            $this->load->view('templates/header', $data);
+            $this->load->view('pages/edit_profile');
+            $this->load->view('templates/footer');
+        }else{
+            $data = $this->input->post();
 
-        $this->load->view('templates/header');
-        $this->load->view('pages/edit_profile',$data);
-        $this->load->view('templates/footer');
+            $this->user_model->update_profile($data);
+            redirect('profile');
+        }
     }
 
-    public function profile_edit(){
-        $data = $this->input->post();
+    // Check if username exists
+    public function check_username_exists($username){
+        $this->form_validation->set_message('check_username_exists', 'That username is taken. Please choose a different one');
 
-        $this->user_model->update_profile($data);
-        redirect('profile');
+        if($this->input->post('name') == $username) { // Check if username is unchanged
+			return true;
+        }elseif($this->registration_model->check_username_exists($username)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function edit_cover(){

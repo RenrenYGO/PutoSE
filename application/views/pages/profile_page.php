@@ -84,10 +84,12 @@
 
         <div class="row">
             <div class="col-4 py-5 ">
-                <div class="bg-light text-dark about ">
-                    <h3>About Me</h3>
-                    <p><?php echo $user['bio'];?></p>
-                    <div class="mb-3">
+                <div class="bg-light about ">
+                    <div class=" text-dark">
+                        <h2><strong>About Me</strong></h2>
+                        <p><?php echo $user['bio'];?></p>
+                    </div>
+                    <div class="mb-3 text-dark">
                         <?php $sess_user = $this->session->userdata('user');
                             if(isset($sess_user) && $sess_user!=null && $sess_user['id'] == $user['id']):?>
                                 <a type="submit" id="edit" href="<?php echo base_url('edit_profile/index');?>" class="btn btn-custom" name="edit" >EDIT PROFILE</a>
@@ -96,10 +98,10 @@
                 </div>
             </div>
                
-            <div class="container col-8 my-5 pl-5 d-grid">
+            <div class="col-8 my-5 pl-5 d-grid">
             
                 <?php foreach ($posts as $post):?>
-                    <button  class="trending-news-box mb-5" onclick="viewPost(<?php echo $post['id']?>)">
+                    <button  class="trending-news-box mb-5" onclick="viewPost(<?php echo $post['id']?>)" style="max-height:10em">
                         <div class="trending-news-img-box">
                             <a class="btn post-user-image" >
                             <?php if($user['profile_picture']!='noimage.jpg'):?>
@@ -129,7 +131,8 @@
                                             <a title="Upvote" href="<?php echo base_url('/posts/upvote/'.$post['id']); ?>"class="btn bg-success" type="submit">
                                                 <?php echo $post['upvote']; ?>
                                             </a>
-                                            
+                                        </div>
+
                                         <div class="input-group me-3 pe-2 ps-1">
                                             <a title="Downvote" href="<?php echo base_url('/posts/downvote/'.$post['id']); ?>"class="btn bg-danger">
                                                 <?php echo $post['downvote']; ?>
