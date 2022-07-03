@@ -66,10 +66,6 @@
             </div>
 
             <div class="list list-right">
-                <button class="btn place-items-center" id="theme-toggle-btn">
-                    <i class="ri-sun-line sun-icon"></i>
-                    <i class="ri-moon-line moon-icon"></i>
-                </button>
 
                 <?php $sess_user = $this->session->userdata('user');
                 if(isset($sess_user) && $sess_user!=null):?>
@@ -94,7 +90,7 @@
                                 <?php endif;?>
                                 
                             </div>
-                            <h3><?php echo $this->session->userdata('user')['name'];?></h3>
+                            <h3><?php echo $user['name'];?></h3>
                             
                         </a>
                         </li>
@@ -104,7 +100,6 @@
                         <li><a class="dropdown-item px-4  screen-lg-hidden" type="button" href="<?php echo base_url();?>contact"><h3>Contact Us</h3></a></li>
 
                         <li><a class="dropdown-item px-4 " type="button" href = "<?php echo base_url();?>settings/edit_account" ><h3>Settings</h3></a></li>
-                        <li><a class="dropdown-item px-4" type="button" href = "<?php echo base_url();?>pages/view/about"><h3>About</h3></a></li>
                         <li><a class="dropdown-item px-4" type="button" href = "<?php echo base_url();?>logout"><h3>Logout</h3></a></li>
                     </ul>
                 <?php else:?>

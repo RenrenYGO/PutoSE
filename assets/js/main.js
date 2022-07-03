@@ -1,14 +1,14 @@
 // Grab elements
 const selectElement = (selector) => {
     const element = document.querySelector(selector);
-    if(element) return element;
-    throw new Error(`Something went wrong! Make sure that ${selector} exists/is typed correctly.`);  
+    if (element) return element;
+    throw new Error(`Something went wrong! Make sure that ${selector} exists/is typed correctly.`);
 };
 
 //Nav styles on scroll
-const scrollHeader = () =>{
+const scrollHeader = () => {
     const navbarElement = selectElement('#header');
-    if(this.scrollY >= 15) {
+    if (this.scrollY >= 15) {
         navbarElement.classList.add('activated');
     } else {
         navbarElement.classList.remove('activated');
@@ -23,7 +23,7 @@ const formOpenBtn = selectElement('#search-icon');
 const formCloseBtn = selectElement('#form-close-btn');
 const searchContainer = selectElement('#search-form-container');
 
-const toggleMenu = () =>{
+const toggleMenu = () => {
     const mobileMenu = selectElement('#menu');
     mobileMenu.classList.toggle('activated');
     menuToggleIcon.classList.toggle('activated');
@@ -36,7 +36,7 @@ formOpenBtn.addEventListener('click', () => searchContainer.classList.add('activ
 formCloseBtn.addEventListener('click', () => searchContainer.classList.remove('activated'));
 // -- Close the search form popup on ESC keypress
 window.addEventListener('keyup', (event) => {
-    if(event.key === 'Escape') searchContainer.classList.remove('activated');
+    if (event.key === 'Escape') searchContainer.classList.remove('activated');
 });
 
 // Switch theme/add to local storage
@@ -80,31 +80,26 @@ const swiper = new Swiper(".swiper", {
     breakpoints: {
         // 700px and up shoes 2 slides
         700: {
-          slidesPerView: 2
+            slidesPerView: 2
         },
         // 1200px and up shoes 3 slides
         1200: {
             slidesPerView: 3
         }
-    }   
+    }
 });
-
-// For viewing specific post
-function viewPost(id){
-    window.location.href = "post/" + id;
-}
 
 function changeAction(link) {
     console.log(link);
     document.getElementById('Modal').action = 'edit_profile/' + link;
-    if(link == 'edit_cover'){
+    if (link == 'edit_cover') {
         document.getElementById('picture').name = 'cover_photo';
-    }else{
+    } else {
         document.getElementById('picture').name = 'profile_picture';
     }
-    
+
 }
 
-function deletePic(link){
+function deletePic(link) {
     window.location.href = 'edit_profile/delete_photo/' + link;
 }
