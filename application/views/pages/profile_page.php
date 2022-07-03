@@ -127,17 +127,17 @@
                             <?php if(isset($_SESSION['user'])):?>
                                 <div class="d-flex mb-3">
                                  
-                                        <div class="input-group ms-2 me-1 pe-2 ps-1">
-                                            <a title="Upvote" href="<?php echo base_url('/posts/upvote/'.$post['id']); ?>"class="btn bg-success" type="submit">
-                                                <?php echo $post['upvote']; ?>
-                                            </a>
-                                        </div>
+                                    <div class="ms-2 me-1 pe-2 ps-1">
+                                        <a title="Upvote" href="<?php echo base_url('/posts/upvoteP/'.$post['id'].'/'.$user['id']); ?>"class="px-2 text-decoration-none"  style="color:green;"> 
+                                        <i class="ri-thumb-up-line px-2"></i><?php echo $post['upvote']; ?></a>
+                                    </div>
+                
 
-                                        <div class="input-group me-3 pe-2 ps-1">
-                                            <a title="Downvote" href="<?php echo base_url('/posts/downvote/'.$post['id']); ?>"class="btn bg-danger">
-                                                <?php echo $post['downvote']; ?>
-                                            </a>
-                                        </div>
+                                
+                                    <div class="input-group me-3 pe-2 ps-1">
+                                        <a title="Downvote" href="<?php echo base_url('/posts/downvoteP/'.$post['id'].'/'.$user['id']); ?>"class="px-2 text-decoration-none" style="color:red;">
+                                        <i class="ri-thumb-down-line px-2" ></i><?php echo $post['downvote']; ?></a>
+                                    </div>
                             
                                 </div>
                             <?php endif; ?>

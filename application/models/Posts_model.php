@@ -37,7 +37,7 @@ class Posts_model extends CI_Model{
 
     public function get_posts_by_user($id){
 
-        if($id === FALSE){
+        if(!$id){
             $id = $this->session->userdata('user')['id'];
         }
 

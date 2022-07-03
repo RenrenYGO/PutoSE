@@ -50,14 +50,13 @@
             <?php if(isset($_SESSION['user'])):?>
                 <div class="d-flex ">
                     <div class="input-group ms-2 me-1 pe-2 ps-1">
-                        <a title="Upvote" href="<?php echo base_url('/posts/upvoteR/'.$post['id']); ?>"class="btn bg-success" >
-                        <?php echo $post['upvote']; ?></a>
+                        <a title="Upvote" href="<?php echo base_url('/posts/upvoteR/'.$post['id']); ?>"class="px-2 text-decoration-none"  style="color:green;"> 
+                        <i class="ri-thumb-up-line px-2"></i><?php echo $post['upvote']; ?></a>
                     </div>
 
                     <div class="input-group me-3 pe-2 ps-1">
-                        <a title="Downvote" href="<?php echo base_url('/posts/downvoteR/'.$post['id']); ?>"class="btn bg-danger">
-                            <?php echo $post['downvote']; ?>
-                        </a>
+                        <a title="Downvote" href="<?php echo base_url('/posts/downvoteR/'.$post['id']); ?>"class="px-2 text-decoration-none"  style="color:red;"> 
+                        <i class="ri-thumb-down-line px-2"></i><?php echo $post['downvote']; ?></a>
                     </div>
                 </div>
             <?php endif; ?>
@@ -109,14 +108,13 @@
                                 <?php if(isset($_SESSION['user'])):?>
                                     <div class="d-flex mb-3">
                                         <div class="input-group ms-2 me-1 pe-2 ps-1">
-                                            <a title="Upvote" href="<?php echo base_url('/replies/upvoteR/'.$reply['id']."/".$post['id']); ?>"class="btn bg-success" >
-                                            <?php echo $reply['upvote']; ?></a>
+                                            <a title="Upvote" href="<?php echo base_url('/replies/upvoteR/'.$reply['id']."/".$post['id']); ?>"class="px-2 text-decoration-none"  style="color:green;"> 
+                                            <i class="ri-thumb-up-line px-2"></i><?php echo $reply['upvote']; ?></a>
                                         </div>
 
-                                        <div class="input-group me-3 pe-2 ps-1">
-                                            <a title="Downvote" href="<?php echo base_url('/replies/downvoteR/'.$reply['id']."/".$post['id']); ?>"class="btn bg-danger">
-                                                <?php echo $reply['downvote']; ?>
-                                            </a>
+                                        <div class="input-group ms-2 me-1 pe-2 ps-1">
+                                            <a title="Downvote" href="<?php echo base_url('/replies/downvoteR/'.$reply['id']."/".$post['id']); ?>"class="px-2 text-decoration-none"  style="color:red;"> 
+                                            <i class="ri-thumb-down-line px-2"></i><?php echo $reply['downvote']; ?></a>
                                         </div>
                                     </div>
                                 <?php endif; ?>

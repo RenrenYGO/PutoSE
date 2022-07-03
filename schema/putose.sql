@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2022 at 12:01 PM
+-- Generation Time: Jul 03, 2022 at 09:04 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -84,7 +84,8 @@ CREATE TABLE `newsletter` (
 
 INSERT INTO `newsletter` (`id`, `email`) VALUES
 (1, 'tabo@gmail.com'),
-(2, 'woketh12@mail.com');
+(2, 'woketh12@mail.com'),
+(3, 'tite@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -111,9 +112,10 @@ CREATE TABLE `posts` (
 
 INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `created_at`, `cat_id`, `react_ids`, `react2_ids`, `upvote`, `downvote`) VALUES
 (13, 2, 'TEST', 'TEST', '2022-06-23 07:54:09', 2, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0),
-(14, 2, 'TEST1', 'TEST1', '2022-06-23 08:02:32', 1, '{\"react_ids\":[]}', '{\"react2_ids\":[]}', 0, 0),
-(15, 2, 'Test2', 'Test2', '2022-06-23 08:05:04', 3, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0),
-(16, 2, 'TEST3', '3', '2022-06-23 08:05:31', 3, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0);
+(14, 2, 'TEST1', 'TEST1', '2022-06-23 08:02:32', 1, '{\"react_ids\":[\"2\"]}', '{\"react2_ids\":[]}', 1, 0),
+(15, 2, 'Test2', 'Test2', '2022-06-23 08:05:04', 3, '{\"react_ids\":[]}', '{\"react2_ids\":[]}', 0, 0),
+(16, 2, 'TEST3', '3', '2022-06-23 08:05:31', 3, '{\"react_ids\":[]}', '{\"react2_ids\":[]}', 0, 0),
+(17, 16, 'TT', 'TT', '2022-07-03 06:15:49', 2, '{\"react_ids\":[\"16\",\"2\"]}', '{\"react2_ids\":[\"2\"]}', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -166,7 +168,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`, `bio`, `profile_picture`, `code`, `cover_photo`) VALUES
 (1, 'asdasd', 'asdasd@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
-(2, 'das', 'ads@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', '<p>MINECRAFT</p>\r\n', '2__okishock.png', '', 'noimage.jpg'),
+(2, 'sad', 'das@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'e', '2_6bbf245fe28be27c17d084df2f194d17-20200817155820.png', '', 'noimage.jpg'),
 (3, 'user0', 'user0@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
 (4, 'test1', 'test@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
 (5, 'asdasdasd', 'asdasdasd@gmail.com', '$2y$10$npHij/5R/zJCU0jUmRmwUe2zoVTR3gkziMgwL8I0RJsTAvNNhQS.K', 'Insert your bio here', 'noimage.jpg', '', 'noimage.jpg'),
@@ -246,19 +248,19 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `user`

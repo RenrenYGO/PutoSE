@@ -32,7 +32,7 @@
                             <h3 class="title newsletter-title text-light">Subscribe to PUTO</h3>
                             <p class="newsletter-description">Join our newsletter for the latest blog updates.</p>
                             <form action="" class="form">
-                            <input type="email" name="email" id="email" style="width:250px;height:36px;" placeholder="Email address" class="ps-2 display border border-secondary border-1 rounded rounded-1"></input>
+                            <input type="email" name="email" id="email" style="width:250px;height:36px;" placeholder="Email address" class="ps-2 display border border-secondary border-1 rounded rounded-1" required></input>
                             <button type="submit" value="Submit" class="btn btn-post">Subscribe</button>
                             </button>
                         </form>
@@ -48,6 +48,13 @@
     <script src="./assets/js/swiper-bundle.min.js"></script>
     <!-- Custom script -->
     <script src="./assets/js/main.js"></script>
+    <script>
+    // For viewing specific post
+    function viewPost(id){
+        window.location.href = "<?php echo base_url('post/')?>" + id;
+    }
+
+    </script>
 </body>
 
 </html>

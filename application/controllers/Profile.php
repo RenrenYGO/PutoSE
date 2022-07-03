@@ -24,9 +24,9 @@ class Profile extends CI_Controller{
         $this->load->view('templates/footer');
     }
 
-    public function index(){
-        $data['user'] = $this->profile_model->get_profile(FALSE);
-        $data['posts'] = $this->posts_model->get_posts_by_user(FALSE);
+    public function index($id=NULL){
+        $data['user'] = $this->profile_model->get_profile($id);
+        $data['posts'] = $this->posts_model->get_posts_by_user($id);
 
         $this->load->view('templates/header2',$data);
         $this->load->view('pages/profile_page');

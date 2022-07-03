@@ -21,10 +21,13 @@ class Edit_Profile extends CI_Controller{
             $this->load->view('pages/edit_profile');
             $this->load->view('templates/footer');
         }else{
-            $data = $this->input->post();
+            $data = array(
+				'name' => $this->input->post('name'),
+                'bio' => $this->input->post('bio')
+			);
 
             $this->user_model->update_profile($data);
-            redirect('profile');
+            redirect('profile/'.$this->input->post('id'));
         }
     }
 

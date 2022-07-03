@@ -121,6 +121,18 @@ class Posts extends CI_Controller {
         redirect('dashboard');
     }
 
+    //Upvote for profile posts
+    public function upvoteP($id,$profile_id){
+        $this->posts_model->upvote_post($id);
+        redirect('profile/'.$profile_id);
+    }
+    
+    // Downvote for profile posts
+    public function downvoteP($id,$profile_id){
+        $this->posts_model->downvote_post($id);
+        redirect('profile/'.$profile_id);
+    }
+
     // Upvote for specific post
     public function upvoteR($id){
 		$this->posts_model->upvote_post($id);
