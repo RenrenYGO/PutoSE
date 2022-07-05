@@ -12,7 +12,7 @@ class Newsletter extends CI_Controller{
         $this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
 
         if($this->form_validation->run() === false){
-            $this->load->view('pages/dashboard', $data);
+            redirect('dashboard');
         }else{
             $data = array(
 				'email' => $this->input->post('email'),

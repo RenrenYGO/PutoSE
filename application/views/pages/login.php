@@ -1,6 +1,6 @@
 
-    <form method="post" class="form bg" action="<?php echo base_url('login/index'); ?>">
-        <div class="box ">
+    <form class="box " method="post" class="form bg" action="<?php echo base_url('login/index'); ?>">
+        <div class="text-light ">
             
             
             <div class="title" style="color: #FFFFFF">
@@ -10,7 +10,7 @@
                 </div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-4">
                 <input type="text" class="form-control" placeholder="Username" name="name">
             </div>
     
@@ -18,10 +18,17 @@
                 <input type="password" class="form-control" placeholder="Password" name="password">
             </div>
 
-            <?php echo validation_errors(); ?>
-            
             <div class="mb-3">
-                <button type="submit" class="btn btn-custom px-5" name="Submit" >LOGIN</button>
+                <?php if($error){ 
+                        echo $error;}
+                    else{?>
+                    </br>
+                <?php }?>
+            </div>
+           
+            
+            <div class="mt-4">
+                <button type="submit" class="btn btn-custom px-5" name="Submit" style="font-size:1.5rem">LOGIN</button>
             </div>
             
 
