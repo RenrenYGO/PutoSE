@@ -12,21 +12,36 @@ class Login extends CI_Controller{
         }
 	}
 	
-    public function index(){
-        $data = $this->input->post();
 
-        if(count($data) > 0){
-            $this->load->model('login_model');
-            $result = $this->login_model->login($data['name'], $data['password']);
 
-            if(!is_bool($result)){
-                $session['user'] = $result;
-                $this->session->set_userdata($session);
-                redirect('/dashboard');
+    public function index()
+    {
+        $this->form_validation->set_rules('name','Username','required');
+        $this->form_validation->set_rules('password','Password','required');
+        // para mawala yung tag sa validation_error()
+        $this->form_validation->set_error_delimiters('','');
+        if($this->form_validation->run()===false) {
+            $data["error"] =  validation_errors();
+            $this->load->view('templates/header', $data);
+            $this->load->view('pages/login');
+            $this->load->view('templates/footer');         
+
+        }else {
+            // Get user login input
+            $username = $this->input->post('name');
+            $password = $this->input->post('password');
+           
+            $data["error"] = $this->login_model->login_user($username,$password); 
+            
+            // Login validation 
+            if($data["error"] == "Login Success"){
+                redirect("dashboard");
             }
+            
+            $this->load->view('templates/header', $data);
+            $this->load->view('pages/login');
+            $this->load->view('templates/footer');      
         }
-		$this->load->view('templates/header');
-        $this->load->view('pages/login');
-        $this->load->view('templates/footer');
-	}
+    }
+
 }

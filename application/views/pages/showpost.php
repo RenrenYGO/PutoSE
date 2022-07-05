@@ -20,7 +20,7 @@
                 </div>
             </div>
             
-            <div class="postheader" style="float: right">
+            <div class="postheader" style="float: right ">
                 <?php if(isset($_SESSION['user']) && $this->session->userdata('user')['id'] == $post['user_id']):?>
                     <a class="btn btn-custom" id="edit" href="<?php echo base_url('posts/edit/'.$post['id']);?>">Edit</a>
                     <a class="btn btn-custom cancel" id="edit" href="<?php echo base_url('posts/delete/'.$post['id']);?>">Delete</a>
@@ -48,7 +48,7 @@
             </div>
 
             <?php if(isset($_SESSION['user'])):?>
-                <div class="d-flex ">
+                <div class="d-flex " style="font-size: var(--font-size-md)";>
                     <div class="input-group ms-2 me-1 pe-2 ps-1">
                         <a title="Upvote" href="<?php echo base_url('/posts/upvoteR/'.$post['id']); ?>"class="px-2 text-decoration-none"  style="color:green;"> 
                         <i class="ri-thumb-up-line px-2"></i><?php echo $post['upvote']; ?></a>
