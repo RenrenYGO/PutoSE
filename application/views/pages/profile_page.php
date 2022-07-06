@@ -128,14 +128,14 @@
                                 <div class="d-flex mb-3">
                                  
                                     <div class="ms-2 me-1 pe-2 ps-1">
-                                        <a title="Upvote" href="<?php echo base_url('/posts/upvoteP/'.$post['id'].'/'.$user['id']); ?>"class="px-2 text-decoration-none"  style="color:green;"> 
+                                        <a title="Upvote" href="<?php echo base_url('/posts/upvoteP/'.$post['id'].'/'.$user['id']); ?>" class="react up text-decoration-none"  style="font-size:1em"> 
                                         <i class="ri-thumb-up-line px-2"></i><?php echo $post['upvote']; ?></a>
                                     </div>
                 
 
                                 
                                     <div class="input-group me-3 pe-2 ps-1">
-                                        <a title="Downvote" href="<?php echo base_url('/posts/downvoteP/'.$post['id'].'/'.$user['id']); ?>"class="px-2 text-decoration-none" style="color:red;">
+                                        <a title="Downvote" href="<?php echo base_url('/posts/downvoteP/'.$post['id'].'/'.$user['id']); ?>" class="react down text-decoration-none" style="font-size:1em">
                                         <i class="ri-thumb-down-line px-2" ></i><?php echo $post['downvote']; ?></a>
                                     </div>
                             
