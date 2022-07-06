@@ -36,8 +36,8 @@
 
         
                     
-        <div class="d-flex justify-content-between mb-3 postfooter text-dark">
-            <div>
+        <div class="d-flex justify-content-between align-items-center mb-3 postfooter ">
+            <div class="text-dark">
                 Replies: <?php echo count($replies)?>
             </div>
 
@@ -50,12 +50,12 @@
             <?php if(isset($_SESSION['user'])):?>
                 <div class="d-flex " style="font-size: var(--font-size-md)";>
                     <div class="input-group ms-2 me-1 pe-2 ps-1">
-                        <a title="Upvote" href="<?php echo base_url('/posts/upvoteR/'.$post['id']); ?>"class="px-2 text-decoration-none"  style="color:green;"> 
+                        <a title="Upvote" href="<?php echo base_url('/posts/upvoteR/'.$post['id']); ?>"class="react up" > 
                         <i class="ri-thumb-up-line px-2"></i><?php echo $post['upvote']; ?></a>
                     </div>
 
                     <div class="input-group me-3 pe-2 ps-1">
-                        <a title="Downvote" href="<?php echo base_url('/posts/downvoteR/'.$post['id']); ?>"class="px-2 text-decoration-none"  style="color:red;"> 
+                        <a title="Downvote" href="<?php echo base_url('/posts/downvoteR/'.$post['id']); ?>"class="react down" > 
                         <i class="ri-thumb-down-line px-2"></i><?php echo $post['downvote']; ?></a>
                     </div>
                 </div>
@@ -108,12 +108,12 @@
                                 <?php if(isset($_SESSION['user'])):?>
                                     <div class="d-flex mb-3">
                                         <div class="input-group ms-2 me-1 pe-2 ps-1">
-                                            <a title="Upvote" href="<?php echo base_url('/replies/upvoteR/'.$reply['id']."/".$post['id']); ?>"class="px-2 text-decoration-none"  style="color:green;"> 
+                                            <a title="Upvote" href="<?php echo base_url('/replies/upvoteR/'.$reply['id']."/".$post['id']); ?>"class="react up text-decoration-none react"> 
                                             <i class="ri-thumb-up-line px-2"></i><?php echo $reply['upvote']; ?></a>
                                         </div>
 
                                         <div class="input-group ms-2 me-1 pe-2 ps-1">
-                                            <a title="Downvote" href="<?php echo base_url('/replies/downvoteR/'.$reply['id']."/".$post['id']); ?>"class="px-2 text-decoration-none"  style="color:red;"> 
+                                            <a title="Downvote" href="<?php echo base_url('/replies/downvoteR/'.$reply['id']."/".$post['id']); ?>"class="react down text-decoration-none react"> 
                                             <i class="ri-thumb-down-line px-2"></i><?php echo $reply['downvote']; ?></a>
                                         </div>
                                     </div>

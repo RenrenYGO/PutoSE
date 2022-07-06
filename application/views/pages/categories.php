@@ -26,7 +26,7 @@
                             </a>
                         </button>
                     <?php else:?>
-                        <button data-bs-toggle="modal" data-bs-target="#InputModal" class="btn sign-up-btn fancy-border screen-sm-hidden" >
+                        <button data-bs-toggle="modal" data-bs-target="#InputModal" class="btn sign-up-btn fancy-border screen-sm-hidden" style="width:11em">
                         <span>Create Post + </span>
                         </button>
                         <!-- Modal -->

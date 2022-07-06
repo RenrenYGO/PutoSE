@@ -604,6 +604,31 @@ label {
  
 }
 
+.react{
+    padding: 0 1rem;
+    text-decoration: none;
+    font-size: .7em;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.up:hover {
+    text-decoration: none;
+    border-radius: 1rem;
+    background: #f0f0f0;
+    color:green !important;
+}
+
+
+.down:hover{
+    text-decoration: none;
+    border-radius: 1rem;
+    background: #f0f0f0;
+    color:red !important;
+}
+
 /* For Individual Post */
 .showpost{
     max-width: 160rem;
@@ -664,6 +689,9 @@ label {
     padding: .7rem 1rem;
 }
 
+.postfooter a:hover{
+    color: var(--hover-dark-color);
+}
 .content{
     width: 100%;
     font-weight: 100; 
